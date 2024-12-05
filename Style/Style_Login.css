@@ -37,13 +37,13 @@
   }
 
   .ladoDireito h1 {
-    font-size: 24px;
+    font-size: 65px;
     color: #000;
     margin-bottom: 10px;
   }
 
   .ladoDireito p {
-    font-size: 18px;
+    font-size: 45px;
     margin-bottom: 30px;
   }
 
@@ -53,23 +53,24 @@
   }
 
   label {
-    font-size: 14px;
+    font-size: 25px;
     margin-bottom: 5px;
     color: #555;
   }
 
   input {
+    width: 80%;
     height: 40px;
     margin-bottom: 20px;
     padding: 0 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .Esqueceu_senha {
-    text-align: right;
-    font-size: 12px;
+    text-align: left;
+    font-size: 20px;
     margin-bottom: 20px;
     color: #007BFF;
     text-decoration: none;
@@ -79,23 +80,24 @@
     text-decoration: underline;
   }
 
-  button {
+  .submit {
+    width: 80%;
     height: 40px;
     background-color: #095169;
     color: #fff;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
   }
 
-  button:hover {
+  .submit:hover {
     background-color: #0056b3;
   }
 
   .signup {
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   .signup a {
@@ -108,10 +110,15 @@
     text-decoration: underline;
   }
 
+  .ladoDireito .cadastro {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
   .footer {
     display: flex;
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     width: 100%;
     font-size: 14px;
     color: #fff;
@@ -128,13 +135,13 @@
   .footer a:hover {
     text-decoration: underline;
   }
-  .footer #ladoDireito #img_footer{
+  .footer #ladoEsquerdo #img_footer{
     margin-left: 100px;
     width: 40%;
-    text-align: right;
+    text-align: left;
   }
   .footer #link{
     display: flex;
-    text-align: left;
+    text-align: right;
     padding: 5px;
   }
