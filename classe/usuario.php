@@ -1,18 +1,20 @@
 <?php
-function pesquisaUsuarioId($id){
+
+function PesquisaTodos(){
+    $query = "select * from  bd_projpalco.Usuario";
+    $resultado = executaQuery($query);
+    // while($usuario = mysqli_fetch_assoc($resultado)){
+    //     var_dump($usuario);
+    // }
+    return $resultado;
+}
+
+function PesquisaUsuarioId($id){
 
 }
 
 function PesquisaUsuarioNome($nome){
 
-}
-
-function PesquisarUsuarioCidade($cidade){
-    $query = "select * from  bd_projpalco.Usuario where cidade = '".$cidade."'";
-    $resultado = executaQuery($query);
-    while($usuario = mysqli_fetch_assoc($resultado)){
-        var_dump($usuario);
-    }
 }
 
 function PesquisaUsuarioEmail($email){
@@ -21,7 +23,7 @@ function PesquisaUsuarioEmail($email){
     return $resultado->fetch_assoc();
 }
 
-function executaQuery($query){
+function ExecutaQuery($query){
     include('../conexao.php');
     $resultado = mysqli_query($conn, $query);
     return $resultado;
