@@ -4,12 +4,13 @@ create table bd_projpalco.Usuario(
 	UsuarioID int primary key not null auto_increment,
     Nome varchar(60) not null,
     Email varchar(45) not null,
-    Senha varchar(25) not null,
+    Senha varchar(32) not null,
     CPF varchar(11) not null,
     Rua varchar(25) not null,
     Bairro varchar(25) not null,
     Cidade varchar(45) not null,
     NumeroResidencia int not null,
+    Bloqueado bool,
     DataCriacao date not null,
     DataModificacao date null
 );
