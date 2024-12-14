@@ -3,52 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/Style_Cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>
     <div class="Container">
-        <div id="Topo">
-            <button>
-                <img src="../Style/Imgs/Row_back.png" alt="">
+            <button class="row_back">
+                ←
             </button>
             <p>Cadastro</p>
-        </div>
+            <h1>Se apresente para a gente.</h1>
 
-        <div id="Foms">
+        <div class="envio_imagem">
+            <label for="file_input">
+                <div class="imagem-preencher">
+                    <img src="../Style/Imgs/Camera.png" alt="Adicionar Foto" class="camera_icon">
+                </div>
+                <input type="file" id="file_input" accept="image/*">
+            </label>
+            
+        </div>
+        <div class="forms">
             <form action="">
-                <label for="name">Nome completo
-                    <input type="text" name="name" id="name" required>
-                </label>
-                <label for="CPF">CPF
-                    <input type="text" name="CPF" id="CPF" required>
-                </label>
-                <label for="Rua">Rua
-                    <input type="text" name="Rua" id="Rua">                    
-                </label>
-                <br>
-                <label for="Bairro">Bairro
-                    <input type="text" name="Bairro" id="Bairro">                    
-                </label>
-                <label for="Cidade">Cidade
-                    <input type="text" name="Cidade" id="Cidade">
-                </label>
-                <label for="Cep">Cep
-                    <input type="text" name="Cep" id="Cep">
-                </label>
-                <br>
-                <label for="email">Email
-                    <input type="email" name="Email" id="Email">
-                </label>
-                <label for="password">Senha
-                    <input type="password" id="senha" name="senha" 
-                    title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.">
-                </label>
-                <label for="password">Repetir Senha
-                    <input type="password" id="repetirSenha" name="senha" 
-                    title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.">
-                </label>
-                <br>
-                <button type="submit">CADASTRAR</button>
+                <div class="form_group">
+                    <label for="name">Nome completo<input type="text" name="name" id="name" required></label>
+                    
+                    <label for="CPF">CPF<input type="text" name="CPF" id="CPF" required></label>
+                    
+                    <label for="Rua">Rua<input type="text" name="Rua" id="Rua"></label>
+                    
+                </div>
+
+                <div class="form_group">
+                    <label for="Bairro">Bairro<input type="text" name="Bairro" id="Bairro"></label>
+                                        
+                    <label for="Cidade">Cidade<input type="text" name="Cidade" id="Cidade"></label>
+                    
+                    <label for="Cep">Cep<input type="text" name="Cep" id="Cep"></label>
+                    
+                </div>
+
+                <div class="form_group">
+                    <label for="email">Email<input type="email" name="Email" id="Email"></label> 
+                    
+                    <label for="senha">Senha<input type="password" id="senha" name="senha" 
+                    title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números."></label>
+                    
+                    <label for="repetirSenha">Repetir Senha<input type="password" id="repetirSenha" name="senha" 
+                    title="A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.">  </label>
+                    
+                </div>
+
+                <button type="submit" class="submit_button">CADASTRAR</button>
             </form>
         </div>
 

@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row_back {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.envio_imagem {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.imagem-preencher {
+    width: 100px;
+    height: 100px;
+    background: #eaf9e1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+}
+
+.imagem-preencher img.camera_icon {
+    width: 1200px;
+    height: 125px;
+}
+
+#file-input {
+    display: none;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form_group {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+
+}
+
+.form_group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit_button {
+    background: #003f5c;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.submit_button:hover {
+    background: #006bb6;
+}
