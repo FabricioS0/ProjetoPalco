@@ -6,6 +6,7 @@ create table bd_projpalco.Usuario(
     Email varchar(45) not null,
     Senha varchar(32) not null,
     CPF varchar(11) not null,
+    CEP varchar(8) not null,
     Rua varchar(25) not null,
     Bairro varchar(25) not null,
     Cidade varchar(45) not null,
