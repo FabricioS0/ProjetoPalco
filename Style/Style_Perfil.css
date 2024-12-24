@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#sair {
+    color: #095169;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#nome_pessoa {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#edicao {
+    margin-top: 5px;
+    color: #095169;
+    text-decoration: none;
+}
+
+.body_perfil {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin: 20px;
+}
+
+.body_perfil a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #095169;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+.body_perfil a:hover, .body_perfil a:focus {
+    border-bottom: 2px solid #095169;
+}
+
+.novoprojeto {
+    display: flex;
+    background-color: #095169;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    float: right;
+    margin-right: 20px;
+}
+
+.novoprojeto:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0C0636;
+    padding: 5px;
+  }
+
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .LadoEsquerdo #img_footer{
+    margin-left: 100px;
+    width: 40%;
+    justify-content: left;
+  }
+  #link{
+    display: inline-block;
+    text-align: right;
+    padding: 5px;
+    margin-top: 15px;
+  }
