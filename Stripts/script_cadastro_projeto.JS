@@ -34,7 +34,7 @@ function moedaFormat2() {
 
 const steps = document.querySelectorAll('.step');
 
-function Progresso(step) {
+/*function Progresso(step) {
   steps.forEach((stepElement, index) => {
     if (index < step) {
       stepElement.classList.add('active');
@@ -44,4 +44,4 @@ function Progresso(step) {
   });
 }
 
-updateProgress(2); 
+updateProgress(2); */
