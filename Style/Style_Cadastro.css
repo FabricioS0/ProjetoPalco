@@ -19,7 +19,7 @@ body {
 
 .row_back {
   background: none;
-  border: 1px solid #333; /* Adiciona uma borda apenas ao botão */
+  border: 1px solid #333; 
   border-radius: 5px;
   font-size: 16px;
   padding: 5px 10px;
