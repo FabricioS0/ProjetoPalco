@@ -10,7 +10,7 @@ create table bd_projpalco.Usuario(
     Rua varchar(25) not null,
     Bairro varchar(25) not null,
     Cidade varchar(45) not null,
-    NumeroResidencia int not null,
+    NumeroResidencia int null,
     Bloqueado bool,
     DataCriacao date not null,
     DataModificacao date null
@@ -19,7 +19,7 @@ create table bd_projpalco.Usuario(
 create table bd_projpalco.Projeto(
 	ProjetoID int primary key not null auto_increment,
     Nome varchar(60) not null,
-    Descricao varchar(2000) not null,
+    Descricao varchar(500) not null,
     ValorMeta decimal(7,2) not null,
     Publico boolean not null,
     DataFim date not null,
