@@ -19,15 +19,15 @@
     
                 <h1>Quais as recompensas?<h1>
             <div class="forms">
-                <form action="">
+                <form action="../controller/cadastroRecompensa.php" method="post">
                     <div class="form_group">
-                        <label for="recompensa">O que a pessoa vai ganhar?<input type="text" name="recompensa" id="recompensa" required maxlength="100"></label>
+                        <label for="descricao">O que a pessoa vai ganhar?<input type="text" name="descricao" id="descricao" required maxlength="100"></label>
                         
-                        <label for="doacao">Valor da doação<input type="number" name="doacao" id="doacao" oninput="moedaFormat2()" placeholder="0,00" required></label>
+                        <label for="valor">Valor da doação<input type="number" name="valor" id="valor" oninput="moedaFormat2()" placeholder="0,00" required></label>
                         <button type="submit" class="save_button">Salvar</button>
                     </div>
                     <hr>
-                    <button type="button" class="submit_button">Avançar</button>
+                    <button type="submit" class="submit_button">Avançar</button>
                 </form>
             </div>
         </div>

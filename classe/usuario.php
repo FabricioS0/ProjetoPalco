@@ -35,16 +35,16 @@ function PesquisaUsuarioEmail($email){
 }
 
 function AtualizarUsuario($id, $nome, $email, $senha, $cpf, $cep, $rua, $bairro, $cidade){
-    $query = "update bd_projpalco.Usuario 
-    set Nome = '".$nome."' 
-    set Email = '".$email."' 
-    set Senha = '".$senha."' 
-    set CPF = '".$cpf."' 
-    set CEP = '".$cep."' 
-    set Rua = '".$rua."' 
-    set Bairro = '".$bairro."' 
-    set Cidade = '".$cidade."' 
-    set DataModificacao = current_date() 
+    $query = "update bd_projpalco.Usuario set 
+    Nome = '".$nome."'
+    , Email = '".$email."'
+    , Senha = ".$senha."
+    , CPF = '".$cpf."'
+    , CEP = '".$cep."'
+    , Rua = '".$rua."'
+    , Bairro = '".$bairro."'
+    ., Cidade = '".$cidade."' 
+    , DataModificacao = current_date() 
     where UsuarioID = ".$id;
 }
 

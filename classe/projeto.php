@@ -31,6 +31,21 @@ function PesquisaPorUsuario($usuarioId){
     return $resultado;
 }
 
+function AlteraProjeto($nome, $descricao, $valor, $datafim, $projetoId){
+    $query = "update bd_projpalco.Projeto
+    set Nome =  '".$nome."'
+    , Descricao = '".$descricao."'
+    , Valor = ".$valor."
+    , DataFim = '".$datafim."'
+    where ProjetoID = ".$projetoId;
+    ExecutaQuery($query);
+}
+
+function DeletaProjeto($projetoId){
+    $query = "delete from bd_projpalco.Projeto where ProjetoIDFK = ".$projetoId;
+    ExecutaQuery($query);
+}
+
 function ExecutaQuery($query){
     include('../conexao.php');
     $resultado = mysqli_query($conn, $query);
