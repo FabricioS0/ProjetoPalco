@@ -63,4 +63,33 @@ function ExecutaQuery($query){
     $resultado = mysqli_query($conn, $query);
     return $resultado;
 }
+
+function SetCookieUsuario($idUsuario){
+    $cookie_name = "usuario";
+    $cookie_value = $idUsuario;
+    setcookie($cookie_name, $cookie_value, time() + (60 * 30), "/"); //30 minutos
+}
+
+function VerificaCookieLoginUsuario(){
+    if(!isset($_COOKIE["usuario"])) {
+        //echo "Cookie named '" . $cookie_name . "' is not set!";
+        return false;
+    } else {
+        // echo "Cookie '" . $cookie_name . "' is set!<br>";
+        // echo "Value is: " . $_COOKIE[$cookie_name];
+        return true;
+    }
+}
+
+function UnsetCookieUsuario(){
+    setcookie("usuario", "", time() - 3600);
+}
+
+function VerificaCookieAtivado(){
+    if(count($_COOKIE) > 0) {
+        echo "Cookies are enabled.";
+    } else {
+        echo "Cookies are disabled.";
+    }
+}
 ?>

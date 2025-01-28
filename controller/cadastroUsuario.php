@@ -9,17 +9,21 @@ if(isset($_POST)){
             $senhaHash = hash('md2', $senha);
             CriarUsuario($nome, $email, $senhaHash, $cpf, $cep, $rua, $bairro, $cidade);
             $usuarioCriado = PesquisaUsuarioEmail($email);
-            var_dump($usuarioCriado);
             if($usuarioCriado != null){
-                echo "Usuário cadastrado!";
+                //echo "Usuário cadastrado!";
+                SetCookieUsuario($usuario["UsuarioID"]);
+                header('Location: '.'../html/pag_Perfil.html');
             }else{
                 echo "Usuário não cadastrado! Ocorreu algum erro";
+                header('Location: '.'../html/Cadastro.html');
             }
         }else{
             echo "Esse email já está cadastrado";
+            header('Location: '.'../html/Cadastro.html');
         }
     }else{
         echo "Senhas não são iguais!";
+        header('Location: '.'../html/Cadastro.html');
     }
 }
 ?>
