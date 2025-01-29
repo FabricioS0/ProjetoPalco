@@ -228,13 +228,23 @@ body {
     background: #2f99ca9a;
   }
 
+  .container-uploads {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
   .upload-box {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 20px;
     border: 2px dashed #98d8a5;
     border-radius: 10px;
     width: 200px;
+    height: 100px;
 }
 
 .upload-box:hover {
