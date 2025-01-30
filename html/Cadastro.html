@@ -9,20 +9,20 @@
 <body>
     <div class="Container">
             
-            <p><button class="row_back"><a href=""></a>←</button>Cadastro</p>
-            <h1>Se apresente para a gente.</h1>
+        <p><button class="row_back"><a href=""></a>←</button>Cadastro</p>
+        <h1>Se apresente para a gente.</h1>
 
-        <div class="envio_imagem">
-                <div class="imagem-preencher">
-                    <img src="../Style/Imgs/adicionar-foto.png" alt="Adicionar Foto" class="camera_icon">
-                    <input type="file" id="file_input" accept="image/*">
-                </div>
-                
-
-            
-        </div>
         <div class="forms">
-            <form action="../controller/cadastroUsuario.php" method="post">
+            <form action="../controller/cadastroUsuario.php" method="post" enctype="multipart/form-data">
+
+                <div class="envio_imagem">
+                    <label for="file_input" class="imagem-preencher">
+                        <img src="../Style/Imgs/adicionar-foto.png" alt="Adicionar Foto" class="camera_icon">
+                    </label>
+                    <input type="file" id="file_input" name="foto" accept="image/*">
+                </div>
+
+
                 <div class="form_group">
                     <label for="name">Nome completo<input type="text" name="nome" id="nome" required></label>
                     
