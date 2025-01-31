@@ -1,8 +1,8 @@
 <?php
 
-function CriarProjeto($nome, $descricao, $valor, $datafim, $usuarioId){
-    $query = "insert into bd_projpalco.projeto(Nome, Descricao, ValorMeta, Publico, DataFim, UsuarioIDFK, DataCriacao) 
-    values('".$nome."','".$descricao."',".$valor.",false,'".$datafim."',".$usuarioId.",current_date())";
+function CriarProjeto($nome, $resumo, $valor, $datafim, $usuarioId){
+    $query = "insert into bd_projpalco.projeto(Nome, Resumo, ValorMeta, Publico, DataFim, UsuarioIDFK, DataCriacao) 
+    values('".$nome."','".$resumo."',".$valor.",false,'".$datafim."',".$usuarioId.",current_date())";
     $resultado = executaQuery($query);
     //return $resultado;
 }
@@ -31,10 +31,10 @@ function PesquisaPorUsuario($usuarioId){
     return $resultado;
 }
 
-function AlteraProjeto($nome, $descricao, $valor, $datafim, $projetoId){
+function AlteraProjeto($nome, $resumo, $valor, $datafim, $projetoId){
     $query = "update bd_projpalco.Projeto
     set Nome =  '".$nome."'
-    , Descricao = '".$descricao."'
+    , Resumo = '".$resumo."'
     , Valor = ".$valor."
     , DataFim = '".$datafim."'
     where ProjetoID = ".$projetoId;

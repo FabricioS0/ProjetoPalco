@@ -19,7 +19,8 @@ create table bd_projpalco.Usuario(
 create table bd_projpalco.Projeto(
 	ProjetoID int primary key not null auto_increment,
     Nome varchar(60) not null,
-    Descricao varchar(500) not null,
+    Resumo varchar(500) not null,
+    Descricao varchar(1000) null,
     ValorMeta decimal(7,2) not null,
     Publico boolean not null,
     DataFim date not null,
