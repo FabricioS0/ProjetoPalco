@@ -7,6 +7,13 @@ function CriarProjeto($nome, $resumo, $valor, $datafim, $usuarioId){
     //return $resultado;
 }
 
+function AdicionaDescricaoProjeto($descricao, $projetoId){
+    $query = "update bd_projpalco.Projeto
+    set Descricao = '".$descricao."'
+    where ProjetoID = ".$projetoId;
+    ExecutaQuery($query);
+}
+
 function PesquisaTodos(){
     $query = "select * from  bd_projpalco.projeto";
     $resultado = executaQuery($query);

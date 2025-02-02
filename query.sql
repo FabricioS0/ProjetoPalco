@@ -10,7 +10,7 @@ alter table bd_projpalco.Usuario add column CEP varchar(8) not null;
 
 alter table bd_projpalco.Projeto drop column Descricao;
 
-alter table bd_projpalco.Projeto add column Descricao varchar(1000) not null;
+alter table bd_projpalco.Projeto add column Descricao varchar(1000) null;
 
 
 alter table bd_projpalco.Projeto add column Resumo varchar(500) not null;

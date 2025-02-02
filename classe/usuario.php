@@ -7,7 +7,7 @@ function CriarUsuario($nome, $email, $senha, $cpf, $cep, $rua, $bairro, $cidade)
     return $resultado;
 }
 
-function PesquisaTodos(){
+function PesquisaTodosUsuarios(){
     $query = "select * from  bd_projpalco.Usuario";
     $resultado = executaQuery($query);
     // while($usuario = mysqli_fetch_assoc($resultado)){
@@ -43,7 +43,7 @@ function AtualizarUsuario($id, $nome, $email, $senha, $cpf, $cep, $rua, $bairro,
     , CEP = '".$cep."'
     , Rua = '".$rua."'
     , Bairro = '".$bairro."'
-    ., Cidade = '".$cidade."' 
+    , Cidade = '".$cidade."' 
     , DataModificacao = current_date() 
     where UsuarioID = ".$id;
 }
@@ -72,13 +72,8 @@ function SetCookieUsuario($idUsuario){
 
 function VerificaCookieLoginUsuario(){
     if(!isset($_COOKIE["usuario"])) {
-        //echo "Cookie named '" . $cookie_name . "' is not set!";
-        return false;
-    } else {
-        // echo "Cookie '" . $cookie_name . "' is set!<br>";
-        // echo "Value is: " . $_COOKIE[$cookie_name];
-        return true;
-    }
+        header('Location: '.'../html/Cadastro.html');
+    } 
 }
 
 function UnsetCookieUsuario(){

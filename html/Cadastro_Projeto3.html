@@ -18,7 +18,9 @@
     
                 <h1>Por que o projeto é importante?<h1>
             <div class="forms">
-                <form action="">
+                <form action="../controller/cadastroMidia.php" method="post" enctype="multipart/form-data">
+                    
+                    <input type="file" id="video" accept=".avi, .mp4, .wmv">
                     <div class="form_group1">
                         <label for="descricao">Descrição detalhada do projeto<input type="text" name="descricao" id="descricao" maxlength="1000" required></label>
                     </div>
@@ -26,7 +28,7 @@
                         </div>
                         <div class="container-uploads">
                             <div class="upload-box">
-                                <input type="file" id="video" accept=".avi, .mp4, .wmv">
+                                <!-- <input type="file" id="video" accept=".avi, .mp4, .wmv"> -->
                                 <label for="video">
                                     <img src="../Style/Imgs/adicionar-foto.png" alt="Ícone de upload" width="50">
                                     <div>Anexar arquivo</div>
@@ -51,7 +53,7 @@
                                 <span>No formato PNG, JPG ou JPEG</span>
                             </div>
                         </div>
-                    <button type="button" class="submit_button">Avançar</button>
+                    <button type="submit" class="submit_button">Avançar</button>
                 </form>
             </div>
         </div>
