@@ -32,7 +32,7 @@ create table bd_projpalco.Projeto(
 
 create table bd_projpalco.Midia(
 	MidiaID int primary key not null auto_increment,
-    Arquivo blob not null,
+    Arquivo longblob not null,
     Descricao varchar(60) null,
     ProjetoIDFK int not null,
     DataCriacao date not null,

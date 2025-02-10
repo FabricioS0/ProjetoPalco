@@ -3,6 +3,8 @@ values("user", "user@email.com", 1234, 00000000000, "Vargas", "Centro", "Eunapol
 
 select * from bd_projpalco.Usuario;
 
+drop table bd_projpalco.Midia;
+
 alter table bd_projpalco.Usuario modify column NumeroResidencia int null;
 
 alter table bd_projpalco.Usuario add column CEP varchar(8) not null;
@@ -26,3 +28,5 @@ values("nome", "descricao",1000,false,'2026-01-21', 1, current_date());
 select * from bd_projpalco.Projeto;
 
 select * from bd_projpalco.Recompensa;
+
+select * from bd_projpalco.Midia;
