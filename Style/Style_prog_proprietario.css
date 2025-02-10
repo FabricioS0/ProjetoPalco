@@ -27,6 +27,7 @@ body {
   }
 
   .row_back a{
+    color: black;
     text-decoration: none;
   }
 
@@ -145,35 +146,3 @@ body {
 
 
 
-
-  .footer {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    color: #fff;
-    background-color: #0C0636;
-    padding: 5px;
-  }
-
-  .footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  .LadoEsquerdo #img_footer{
-    margin-left: 100px;
-    width: 40%;
-    justify-content: left;
-  }
-  #link{
-    display: inline-block;
-    text-align: right;
-    padding: 5px;
-    margin-top: 15px;
-  }
