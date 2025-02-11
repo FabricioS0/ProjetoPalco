@@ -30,17 +30,7 @@ body {
     text-decoration: none;
   }
 
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    color: #fff;
-    background-color: #0C0636;
-    padding: 5px;
-  }
+  
 
 
 .busca{
@@ -78,39 +68,35 @@ body {
 
 .container-projetos{
    display: grid;
-  grid-template-columns: repeat(3, 1fr);  
+  grid-template-columns: repeat(3, 1fr); 
+  justify-items: center;
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
+
+
+.projeto {
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
   
-
-
-  .footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+  .projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
   }
 
-  .footer a:hover {
-    text-decoration: underline;
+  .projeto img{
+    width: 350px;
+    border-radius: 10px;
   }
-  .LadoEsquerdo #img_footer{
-    margin-left: 100px;
-    width: 40%;
-    justify-content: left;
-  }
-  #link{
-    display: inline-block;
-    text-align: right;
-    padding: 5px;
-    margin-top: 15px;
-  }
-
-  .LadoDireito{
-    margin-top: 20px;
-    justify-items: center;
-    margin-right: 200px;
-    margin-bottom: 20px;
-  }
-
-  .LadoDireito h1{
-    font-size: 20px;
+  
+  .valores{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
