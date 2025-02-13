@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+.eventResume {
+  display: grid;
+  background-image: url(/Style/Imgs/img_home.jpg);
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.eventResume h1 {
+  height: 30vh;
+  margin-right: 0.5em;
+  font-size: 3em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.eventResume p {
+  margin-top: -20vh;
+  font-size: 1.5em;
+  color: white;
+}
+
+.botaoEvent {
+  margin-left: 24.5em;
+  width: 15em;
+  height: 7vh;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: #004c66; 
+  font-size: 1.2em;
+  font-weight: bold; 
+  padding: 1rem 2rem;
+  margin-top: -10vh;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:0.3s ease;
+}
+
+.botaoEvent:hover {
+  background-color: rgb(209, 209, 209);
+}
+
+.projetos-destaque {
+  margin-left: 5em;
+  margin-top: 5vh;
+  font-size: 20px;
+}
+
+.container-projetos{
+    display: grid;
+   grid-template-columns: repeat(3, 1fr); 
+   justify-items: center;
+   margin-bottom: 80px;
+   margin-top: 80px;
+ }
+ 
+ 
+ .projeto {
+     width: 350px;
+     height: 450px;
+     background: white;
+     border-radius: 10px;
+     padding: 20px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+   }
+   
+   .projeto:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+   }
+ 
+   .projeto img{
+     width: 350px;
+     border-radius: 10px;
+   }
+   
+   .valores{
+     margin-top: 10px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+   }
+
+   .container-agenda{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-items: center;
+    margin-bottom: 80px;
+    margin-top: 80px;
+ }
+ 
+ .quemSomos{
+  background-image: url(/Style/Imgs/img_home2.jpg);
+  height: 50vh;
+ }
+
+ .container-area{
+  background-color: white;
+  height: 45vh;
+  width: 80vh;
+  border-radius: 25px;
+ }
+ 
+ .eventosCult {
+     width: 350px;
+     height: 450px;
+     background: white;
+     border-radius: 10px;
+     padding: 20px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+   }
+   
+   .eventosCult:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+   }
+ 
+   .eventosCult img{
+     width: 350px;
+    
+     border-radius: 10px;
+   }
+   
+   .LocData {
+     margin-top: 10px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+   }
