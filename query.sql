@@ -30,3 +30,5 @@ select * from bd_projpalco.Projeto;
 select * from bd_projpalco.Recompensa;
 
 select * from bd_projpalco.Midia;
+
+update bd_projpalco.Midia set TipoArquivo = 'image' where MidiaID = 2 or MidiaID = 4 or MidiaID = 6 or MidiaID = 7 or MidiaID = 8

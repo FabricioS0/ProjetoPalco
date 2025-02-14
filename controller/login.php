@@ -10,7 +10,7 @@ if(isset($_POST)){
             if($usuario["Email"] == $email && $senhaHash == $usuario["Senha"]){
                 //echo "Usuario validado!";
                 SetCookieUsuario($usuario["UsuarioID"]);
-                header('Location: '.'../html/pag_Perfil.html');
+                header('Location: '.'../html/pag_Perfil.php');
             }
             else{
                 echo "Usuario não validado";

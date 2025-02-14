@@ -34,6 +34,7 @@ create table bd_projpalco.Midia(
 	MidiaID int primary key not null auto_increment,
     Arquivo longblob not null,
     Descricao varchar(60) null,
+    TipoArquivo varchar(10) null,
     ProjetoIDFK int not null,
     DataCriacao date not null,
     DataModificacao date null,

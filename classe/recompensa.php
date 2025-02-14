@@ -3,7 +3,7 @@
 function CriarRecompensa($descricao, $valor, $projetoid){
     $query = "insert into bd_projpalco.recompensa(Descricao, Valor, ProjetoIDFK, DataCriacao) 
     values('".$descricao."',".$valor.",".$projetoid.", current_date())"; 
-    $resultado = ExecutaQuery($query);
+    $resultado = ExecutaQueryRecompensa($query);
 }
 
 function AlteraRecompensa($recompensaId, $descricao, $valor){
@@ -12,21 +12,21 @@ function AlteraRecompensa($recompensaId, $descricao, $valor){
     , Valor = ".$valor."
     , DataAlteracao = current_date())  
     where RecompensaIDFK = ".$recompensaId; 
-    $resultado = ExecutaQuery($query);
+    $resultado = ExecutaQueryRecompensa($query);
 }
 
 function DeletaRecompensa($recompensaId){
     $query = "delete from bd_projpalco.Recompensa where RecompensaID = ".$recompensaId;
-    ExecutaQuery($query);
+    ExecutaQueryRecompensa($query);
 }
 
 function PesquisaRecompensaPorProjetoId($projetoId){
     $query = "select * from bd_projpalco.Recompensa where ProjetoIDFK = ".$projetoId; 
-    $resultado = ExecutaQuery($query);
+    $resultado = ExecutaQueryRecompensa($query);
     return $resultado;
 }
 
-function ExecutaQuery($query){
+function ExecutaQueryRecompensa($query){
     include('../conexao.php');
     $resultado = mysqli_query($conn, $query);
     return $resultado;

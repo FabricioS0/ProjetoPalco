@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+include('../controller/perfil.php');
+$usuario = RetornaUsuarioLogado();
+$projetosUsuario = PesquisaProjetosPorUsuario($usuario['UsuarioID']);
+echo '<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,10 +13,10 @@
 <body>
     <div class="header">
         <p>Boas Vindas!</p>
-        <a href="#" id="sair">SAIR</a>
+        <a href="../controller/deslogar.php" id="sair">SAIR</a>
     </div>
     <div class="perfil">
-        <p id="nome_pessoa">Nome da pessoa</p>
+        <p id="nome_pessoa">'.$usuario['Nome'].'</p>
         <a href="#" id="edicao">editar perfil</a>
     </div>
     <div class="body_perfil">
@@ -20,11 +24,22 @@
         <a href="#Concluidos">CONCLUIDOS</a>
         <a href="#Desativados">DESATIVADOS</a>
     </div>
-        <a href="#" class="novoprojeto">NOVO PROJETO</a>
-    <div class="Projetos">
-        
+    <a href="Cadastro_Projeto1.html" class="novoprojeto">NOVO PROJETO</a>
+    <div class="Projetos">';
+        foreach($projetosUsuario as $projeto){
+            echo '
+        <div class="projeto">
+            <img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
+            <h1>'.$projeto['Nome'].'</h1>
+            <p>'.$projeto['Resumo'].'</p>
+            <div class="valores">
+                <p>'.$projeto['ValorMeta'].'</p>
+                <p> Termina em: '.$projeto['DataFim'].'</p>
+            </div>
+        </div>';
+        }
+        echo '
     </div>
-    
     <div class="footer">
         <div class="LadoEsquerdo"><img src="../Style/Imgs/Logo.png" alt="" id="img_footer"></div>
         
@@ -36,4 +51,5 @@
         </div>  
     </div>
 </body>
-</html>
+</html>';
+?>

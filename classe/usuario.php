@@ -3,13 +3,13 @@
 function CriarUsuario($nome, $email, $senha, $cpf, $cep, $rua, $bairro, $cidade){
     $query = "insert into bd_projpalco.Usuario(Nome, Email, Senha, CPF, CEP, Rua,Bairro, Cidade, DataCriacao)
     values('".$nome."', '".$email."', '".$senha."', '".$cpf."', '".$cep."', '".$rua."', '".$bairro."', '".$cidade."',  current_date());";
-    $resultado = ExecutaQuery($query);
+    $resultado = ExecutaQueryUsuario($query);
     return $resultado;
 }
 
 function PesquisaTodosUsuarios(){
     $query = "select * from  bd_projpalco.Usuario";
-    $resultado = executaQuery($query);
+    $resultado = ExecutaQueryUsuario($query);
     // while($usuario = mysqli_fetch_assoc($resultado)){
     //     var_dump($usuario);
     // }
@@ -17,20 +17,20 @@ function PesquisaTodosUsuarios(){
 }
 
 function PesquisaUsuarioId($id){
-    $query = "select * from  bd_projpalco.Usuario where id = ".$id;
-    $resultado = executaQuery($query);
+    $query = "select * from  bd_projpalco.Usuario where UsuarioID = ".$id;
+    $resultado = ExecutaQueryUsuario($query);
     return $resultado->fetch_assoc();
 }
 
 function PesquisaUsuarioNome($nome){
     $query = "select * from  bd_projpalco.Usuario where nome = '".$nome."'";
-    $resultado = executaQuery($query);
+    $resultado = ExecutaQueryUsuario($query);
     return $resultado->fetch_assoc();
 }
 
 function PesquisaUsuarioEmail($email){
     $query = "select * from  bd_projpalco.Usuario where email = '".$email."'";
-    $resultado = executaQuery($query);
+    $resultado = ExecutaQueryUsuario($query);
     return $resultado->fetch_assoc();
 }
 
@@ -50,34 +50,31 @@ function AtualizarUsuario($id, $nome, $email, $senha, $cpf, $cep, $rua, $bairro,
 
 function BloquearUsuario($id){
     $query = "update bd_projpalco.Usuario set Bloqueado = true where UsuarioID = ".$id;
-    $resultado = executaQuery($query);
+    $resultado = ExecutaQueryUsuario($query);
 }
 
 function DesbloquearUsuario($id){
     $query = "update bd_projpalco.Usuario set Bloqueado = false where UsuarioID = ".$id;
-    $resultado = executaQuery($query);
-}
-
-function ExecutaQuery($query){
-    include('../conexao.php');
-    $resultado = mysqli_query($conn, $query);
-    return $resultado;
+    $resultado = ExecutaQueryUsuario($query);
 }
 
 function SetCookieUsuario($idUsuario){
-    $cookie_name = "usuario";
-    $cookie_value = $idUsuario;
-    setcookie($cookie_name, $cookie_value, time() + (60 * 30), "/"); //30 minutos
+    setcookie("usuario", $idUsuario, time() + (60 * 30), "/"); //30 minutos
+}
+
+function RetornaUsuarioLogadoCookie(){
+    return $_COOKIE["usuario"];
 }
 
 function VerificaCookieLoginUsuario(){
     if(!isset($_COOKIE["usuario"])) {
-        header('Location: '.'../html/Cadastro.html');
+        return false;
     } 
+    return true;
 }
 
 function UnsetCookieUsuario(){
-    setcookie("usuario", "", time() - 3600);
+    setcookie("usuario", "", time());
 }
 
 function VerificaCookieAtivado(){
@@ -86,5 +83,11 @@ function VerificaCookieAtivado(){
     } else {
         echo "Cookies are disabled.";
     }
+}
+
+function ExecutaQueryUsuario($query){
+    include('../conexao.php');
+    $resultado = mysqli_query($conn, $query);
+    return $resultado;
 }
 ?>

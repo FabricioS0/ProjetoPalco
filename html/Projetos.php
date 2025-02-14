@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+include('../controller/projetos.php');
+
+$projetos = pesquisarTodosProjetos();
+
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,18 +34,17 @@
         <div class="projetos-destaque">
             <h2>Em destaque:</h2>
             <div class="container-projetos">
-                <div class="projeto">
-                    <img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
-                    <h1>Projeto X</h1>
-                    <p>Donec et mi ante. Vivamus sem risus, 
-                        bibendum eget metus a, posuere auctor 
-                        orci.
-                    </p>
-                    <div class="valores">
-                        <p>R$100,00</p>
-                        <p>Termina em: 12/12/2004</p>
-                    </div>
-                </div>
+                <div class="projeto">  ';
+                    foreach($projetos as $projeto){
+                        echo '<img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
+                        <h1>'.$projeto['Nome'].'</h1>
+                        <p>'.$projeto['Resumo'].'</p>
+                        <div class="valores">
+                            <p>'.$projeto['ValorMeta'].'</p>
+                            <p>Termina em: '.$projeto['DataFim'].'</p>
+                        </div>';
+                    }
+                echo '</div>
             </div>
             <hr style="border: none; height: 1px; background-color: #9FD86B;">
         </div>
@@ -78,4 +82,5 @@
         </div>  
     </footer>
 </body>
-</html>
+</html>';
+?>
