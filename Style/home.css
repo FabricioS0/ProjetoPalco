@@ -157,7 +157,7 @@ body {
 
  .eventosCult {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(2, 1fr); 
   justify-items: center;
   margin-bottom: 80px;
   margin-top: 80px;
