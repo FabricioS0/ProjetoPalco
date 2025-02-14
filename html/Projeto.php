@@ -12,7 +12,7 @@ echo '<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Style/Style_prog_proprietario.css">
+    <link rel="stylesheet" href="/ProjetoPalco/Style/Style_prog_proprietario.css">
     <link rel="stylesheet" href="/ProjetoPalco/Style/cabecalho&header.css">
     <title>Projeto Proprietario</title>
 </head>
