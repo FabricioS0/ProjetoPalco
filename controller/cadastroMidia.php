@@ -1,5 +1,6 @@
 <?php
 include('../classe/midia.php');
+include('../classe/projeto.php');
 
 if(isset($_POST)){
     extract($_POST); //descricao, video, imagem1, imagem2
@@ -23,6 +24,8 @@ if(isset($_POST)){
         if($_FILES["imagem2"]["tmp_name"] != null){
             CriarMidia(addslashes(file_get_contents($_FILES["imagem2"]["tmp_name"])), 'imagem 2 muito braba', $_GET['ProjetoId'], 'image');
         }
+
+        AdicionaDescricaoProjeto($descricao, $_GET['ProjetoId']);
     
         header('Location: '.'../html/Projeto_proprietario.php?projetoId='.$_GET['ProjetoId']);
     }
