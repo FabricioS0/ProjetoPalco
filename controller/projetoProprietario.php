@@ -10,6 +10,12 @@ function VerificaLogin(){
     }
 }
 
+function VerificaProjetoUsuario($usuarioId){
+    if(RetornaUsuarioLogadoCookie() != $usuarioId){
+        header('Location: '.'../html/Projeto.php?projetoId='.$_GET['projetoId']);
+    }
+}
+
 function PesquisaDadosProjeto($projetoId){
     VerificaLogin();
     $projeto = PesquisaPorId($projetoId);

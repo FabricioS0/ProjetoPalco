@@ -6,9 +6,9 @@ function PesquisarMidiaPorProjetoId($projetoId){
     return ExecutaQueryMidia($query);
 }
 
-function CriarMidia($arquivo, $descricao, $projetoId){    
-    $query = "insert into bd_projpalco.Midia(Arquivo, Descricao, ProjetoIDFK, DataCriacao) 
-    values('".$arquivo."','".$descricao."',".$projetoId.",current_date())";
+function CriarMidia($arquivo, $descricao, $projetoId, $tipoArquivo){    
+    $query = "insert into bd_projpalco.Midia(Arquivo, Descricao, ProjetoIDFK, TipoArquivo, DataCriacao) 
+    values('".$arquivo."','".$descricao."',".$projetoId.",'".$tipoArquivo."',current_date())";
     $resultado = ExecutaQueryMidia($query);
 }
 

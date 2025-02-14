@@ -74,7 +74,7 @@ function VerificaCookieLoginUsuario(){
 }
 
 function UnsetCookieUsuario(){
-    setcookie("usuario", "", time());
+    setcookie("usuario", $idUsuario, time()-1000,"/");
 }
 
 function VerificaCookieAtivado(){

@@ -1,10 +1,15 @@
 <?php
 include('../controller/projetoProprietario.php');
 
+VerificaLogin();
+if($_GET['projetoId'] == null){
+    header('Location: '.'../html/home.html');
+}
 $projeto = PesquisaDadosProjeto($_GET['projetoId']);
 if($projeto == null){
     header('Location: '.'../html/home.html');
 }
+VerificaProjetoUsuario($projeto['UsuarioIDFK']);
 $recompensas = PesquisarRecompensas($projeto['ProjetoID']);
 $midias = PesquisarMidias($projeto['ProjetoID']);
 

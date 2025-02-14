@@ -1,5 +1,9 @@
 <?php
 include('../controller/projeto.php');
+
+if($_GET['projetoId']==null){
+    header('Location: '.'../html/home.html');
+}
 $projeto = pesquisarProjeto($_GET['projetoId']);
 if($projeto == null){
     header('Location: '.'../html/home.html');

@@ -1,7 +1,5 @@
 <?php
 include('../classe/midia.php');
-// include('../classe/usuario.php');
-// include('../classe/projeto.php');
 
 if(isset($_POST)){
     extract($_POST); //descricao, video, imagem1, imagem2
@@ -15,15 +13,15 @@ if(isset($_POST)){
             $tipoArquivo = $_FILES["video"]["type"];
             $dadosArquivo = file_get_contents($_FILES["video"]["tmp_name"]); // Lê o arquivo binário
     
-            CriarMidia(addslashes(file_get_contents($_FILES["video"]["tmp_name"])), 'video muito brabo', $_GET['ProjetoId']);
+            CriarMidia(addslashes(file_get_contents($_FILES["video"]["tmp_name"])), 'video muito brabo', $_GET['ProjetoId'], 'video');
         }
     
-        if($_FILES["imagem1"] != null){
-            CriarMidia(addslashes(file_get_contents($_FILES["imagem1"]["tmp_name"])), 'imagem 1 muito braba', $_GET['ProjetoId']);
+        if($_FILES["imagem1"]["tmp_name"] != null){
+            CriarMidia(addslashes(file_get_contents($_FILES["imagem1"]["tmp_name"])), 'imagem 1 muito braba', $_GET['ProjetoId'], 'image');
         }
         
-        if($_FILES["imagem2"] != null){
-            CriarMidia(addslashes(file_get_contents($_FILES["imagem2"]["tmp_name"])), 'imagem 2 muito braba', $_GET['ProjetoId']);
+        if($_FILES["imagem2"]["tmp_name"] != null){
+            CriarMidia(addslashes(file_get_contents($_FILES["imagem2"]["tmp_name"])), 'imagem 2 muito braba', $_GET['ProjetoId'], 'image');
         }
     
         header('Location: '.'../html/Projeto_proprietario.php?projetoId='.$_GET['ProjetoId']);
