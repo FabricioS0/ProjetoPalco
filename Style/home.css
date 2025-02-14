@@ -63,7 +63,7 @@ body {
 }
 
 .container-projetos{
-    display: grid;
+  display: grid;
    grid-template-columns: repeat(3, 1fr); 
    justify-items: center;
    margin-bottom: 80px;
@@ -107,34 +107,79 @@ body {
  
  .quemSomos{
   background-image: url(/Style/Imgs/img_home2.jpg);
-  height: 50vh;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
  }
 
  .container-area{
+  font-size: 20px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
   background-color: white;
-  height: 45vh;
+  height: 40vh;
   width: 80vh;
   border-radius: 25px;
+  padding: 1.5em;
  }
+
+ .divulProj, .VerMais {
+  font-size: 20px;
+  margin: 5px;
+}
+
+.divulProj{
+  background-color: #004c66; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; 
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.VerMais{
+    background-color: white;
+    color: #004c66;
+    padding: 10px 20px;
+    border-radius: 5px; 
+    border: none;
+    text-decoration: none;
+}
  
+.EventDestaque{
+  font-size: 20px;
+  margin-left: 5em;
+  margin-top: 5vh;
+}
+
  .eventosCult {
-     width: 350px;
-     height: 450px;
-     background: white;
-     border-radius: 10px;
-     padding: 20px;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  justify-items: center;
+  margin-bottom: 80px;
+  margin-top: 80px;
+   }
+
+   .evento{
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
    }
    
-   .eventosCult:hover {
+   .evento:hover {
      transform: translateY(-5px);
      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
    }
  
-   .eventosCult img{
+   .evento img{
      width: 350px;
-    
      border-radius: 10px;
    }
    
