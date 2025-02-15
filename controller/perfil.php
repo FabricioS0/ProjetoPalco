@@ -4,7 +4,7 @@ include('../classe/projeto.php');
 
 function VerificaLogadoCookies(){
     if(!VerificaCookieLoginUsuario()){
-        header('Location: '.'../html/login.html');
+        header('Location: '.'../html/login.php');
     }
 }
 

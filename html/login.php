@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+include('../classe/usuario.php');
+if(VerificaCookieLoginUsuario()){
+    header('Location: '.'../html/pag_Perfil.php');
+}
+
+echo '<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -40,4 +46,5 @@
         </div>  
     </div>
 </body>
-</html>
+</html>';
+?>
