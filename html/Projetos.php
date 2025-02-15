@@ -34,23 +34,24 @@ echo '<!DOCTYPE html>
     echo '
     </header>
     <div class="Container">
-        <button class="row_back"><a href="./pag_Perfil.html">←</a></button>
         <h1>Ajude em um projeto e ganhe <br> recompensas incríveis!</h1>
         <div class="projetos-destaque">
             <h2>Em destaque:</h2>
             <div class="container-projetos">';
                     foreach($projetos as $projeto){
                         echo '
-                        <div class="projeto">';
-                            $image = pesquisarPrimeriaImagem($projeto['ProjetoID']);
-                            echo '<img src="data:image/jpeg;base64,'.base64_encode($image['Arquivo']).'" alt="Foto do projeto" class="imagem-projeto">
-                            <h1>'.$projeto['Nome'].'</h1>
-                            <p>'.$projeto['Resumo'].'</p>
-                            <div class="valores">
-                                <p>'.$projeto['ValorMeta'].'</p>
-                                <p>Termina em: '.$projeto['DataFim'].'</p>
+                        <a href="Projeto.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
+                            <div class="projeto">';
+                                $image = pesquisarPrimeriaImagem($projeto['ProjetoID']);
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($image['Arquivo']).'" alt="Foto do projeto" class="imagem-projeto">
+                                <h1>'.$projeto['Nome'].'</h1>
+                                <p>'.$projeto['Resumo'].'</p>
+                                <div class="valores">
+                                    <p>'.$projeto['ValorMeta'].'</p>
+                                    <p>Termina em: '.$projeto['DataFim'].'</p>
+                                </div>
                             </div>
-                        </div>';
+                        </a>';
                     }
                 echo '
             </div>

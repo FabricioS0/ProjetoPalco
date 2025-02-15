@@ -2,7 +2,7 @@
 include('../controller/perfil.php');
 $usuario = RetornaUsuarioLogado();
 $projetosUsuario = PesquisaProjetosPorUsuario($usuario['UsuarioID']);
-?>
+echo '
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,7 +17,7 @@ $projetosUsuario = PesquisaProjetosPorUsuario($usuario['UsuarioID']);
             <a href="../controller/deslogar.php" id="sair">SAIR</a>
         </div>
         <div class="perfil">
-            <p id="nome_pessoa"><?php echo htmlspecialchars($usuario['Nome']); ?></p>
+            <p id="nome_pessoa">'; echo $usuario['Nome']; echo '</p>
             <a href="#" id="edicao">Editar Perfil</a>
         </div>
         <div class="body_perfil">
@@ -26,30 +26,36 @@ $projetosUsuario = PesquisaProjetosPorUsuario($usuario['UsuarioID']);
             <a href="#Desativados">DESATIVADOS</a>
         </div>
         <a href="Cadastro_Projeto1.html" class="novoprojeto">NOVO PROJETO</a>
+        <!-- container projeto  -->
         <div style="  display: grid;
             grid-template-columns: repeat(3, 1fr); 
             justify-items: center;
             margin-bottom: 80px;
-            margin-top: 80px;">
-            <?php foreach ($projetosUsuario as $projeto): ?>
-                <div style="width: 350px;
-                    height: 450px;
-                    background: white;
-                    border-radius: 10px;
-                    padding: 20px;
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-                    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-                    ">
-                    <img src="../Style/Imgs/img_projeto.jpg" style="width:350px;height:250px">
-                    <h1><?php echo htmlspecialchars($projeto['Nome']); ?></h1>
-                    <p><?php echo htmlspecialchars($projeto['Resumo']); ?></p>
-                    <div class="valores">
-                        <p>R$ <?php echo number_format($projeto['ValorMeta'], 2, ',', '.'); ?></p>
-                        <p>Termina em: <?php echo htmlspecialchars($projeto['DataFim']); ?></p>
+            margin-top: 80px;">';
+            foreach ($projetosUsuario as $projeto){
+                echo '<!-- projeto -->
+                <a href="Projeto.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
+                    <div style="width: 350px; 
+                        height: 450px;
+                        background: white;
+                        border-radius: 10px;
+                        padding: 20px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                        ">';
+                                $image = pesquisarPrimeriaImagem($projeto['ProjetoID']);
+                                echo '<img src="data:image/jpeg;base64,'.base64_encode($image['Arquivo']).'" alt="Foto do projeto" class="imagem-projeto" style="width:350px;height:250px">';
+                        echo '  
+                        <h1>'; echo $projeto['Nome']; echo '</h1>
+                        <p>'; echo $projeto['Resumo']; echo '</p>
+                        <div class="valores">
+                            <p>R$'; echo number_format($projeto['ValorMeta'], 2, ',', '.'); echo '</p>
+                            <p>Termina em:'; echo $projeto['DataFim']; echo '</p>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
+                </a>';
+            }
+        echo '</div>
         <div class="footer">
             <div class="LadoEsquerdo">
                 <img src="../Style/Imgs/Logo.png" alt="Logo" id="img_footer">
@@ -62,4 +68,5 @@ $projetosUsuario = PesquisaProjetosPorUsuario($usuario['UsuarioID']);
             </div>
         </div>
 </body>
-</html>
+</html>';
+?>

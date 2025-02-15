@@ -4,10 +4,12 @@ include('../controller/projeto.php');
 if($_GET['projetoId']==null){
     header('Location: '.'../html/home.html');
 }
+
 $projeto = pesquisarProjeto($_GET['projetoId']);
 if($projeto == null){
     header('Location: '.'../html/home.html');
 }
+
 $recompensas = PesquisarRecompensas($projeto['ProjetoID']);
 $midias = PesquisarMidias($projeto['ProjetoID']);
 
@@ -56,13 +58,16 @@ echo '<!DOCTYPE html>
                 <p id="Data_projeto">Data de término: '.$projeto['DataFim'].'</p>
             </div>
         </div>
-        <div class="recompensa">
-            <h1>Recompensa</h1>
-            ';
-                if($recompensas!=null){
-                    foreach($recompensas as $recompensa){
-                        echo 'Decrição: '.$recompensa['Descricao'].'/ Valor: '.$recompensa['Valor'];
-                    }
+        <h1>Recompensa</h1>
+        <div class="recompensa-container">';
+                foreach($recompensas as $recompensa){
+                    echo '
+                    <div class="recompensa">
+                        <p>'.$recompensa['Descricao'].'</p>
+                        <div class="valores">
+                            <p>Valor:'.$recompensa['Valor'].'</p>
+                        </div>
+                    </div>';
                 }
             echo '
         </div>
@@ -70,9 +75,7 @@ echo '<!DOCTYPE html>
         <section id="sobre" class="sobre-container">
             <div class="sobre-texto">
               <h2>Sobre o projeto</h2>
-              <p>
-                '.$projeto['Descricao'].'
-              </p>
+              <p>'.$projeto['Descricao'].'</p>
             </div>';
           
             // <div class="sobre-midia">
