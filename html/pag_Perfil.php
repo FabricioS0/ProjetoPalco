@@ -11,6 +11,7 @@ echo '<!DOCTYPE html>
     <title>Perfil</title>
 </head>
 <body>
+    <div class="container">
     <div class="header">
         <p>Boas Vindas!</p>
         <a href="../controller/deslogar.php" id="sair">SAIR</a>
@@ -25,11 +26,11 @@ echo '<!DOCTYPE html>
         <a href="#Desativados">DESATIVADOS</a>
     </div>
     <a href="Cadastro_Projeto1.html" class="novoprojeto">NOVO PROJETO</a>
-    <div class="Projetos">';
+    <div class="container-projetos">';
         foreach($projetosUsuario as $projeto){
             echo '
         <div class="projeto">
-            <img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
+            <img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="" width="300px">
             <h1>'.$projeto['Nome'].'</h1>
             <p>'.$projeto['Resumo'].'</p>
             <div class="valores">
@@ -49,6 +50,7 @@ echo '<!DOCTYPE html>
             <a href="youtube" id="link">Youtube</a>
             <a href="Facebook" id="link">Facebook</a>
         </div>  
+    </div>
     </div>
 </body>
 </html>';
