@@ -6,15 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-.Container {
-  width: 100%;
-  border-radius: 10px;
-  padding: 20px;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -97,7 +88,6 @@ body {
  margin-top: 80px;
 }
 
-
 .projeto {
    width: 350px;
    height: 450px;
@@ -114,7 +104,7 @@ body {
  }
 
  .projeto img{
-   width: 350px;
+   width: 200px;
    border-radius: 10px;
  }
  
@@ -124,47 +114,46 @@ body {
    grid-template-columns: repeat(2, 1fr);
  }
 
+ .footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  color: #fff;
+  background-color: #0C0636;
+  padding: 5px;
+}
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    color: #fff;
-    background-color: #0C0636;
-    padding: 5px;
-  }
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-  .footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-  }
+.footer a:hover {
+  text-decoration: underline;
+}
 
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  .LadoEsquerdo #img_footer{
-    margin-left: 100px;
-    width: 40%;
-    justify-content: left;
-  }
-  #link{
-    display: inline-block;
-    text-align: right;
-    padding: 5px;
-    margin-top: 15px;
-  }
+.LadoEsquerdo #img_footer{
+  margin-left: 100px;
+  width: 40%;
+  justify-content: left;
+}
 
-  .LadoDireito{
-    margin-top: 20px;
-    justify-items: center;
-    margin-right: 200px;
-    margin-bottom: 20px;
-  }
+#link{
+  display: inline-block;
+  text-align: right;
+  padding: 5px;
+  margin-top: 15px;
+}
 
-  .LadoDireito h1{
-    font-size: 20px;
-  }
+.LadoDireito{
+  margin-top: 20px;
+  justify-items: center;
+  margin-right: 200px;
+  margin-bottom: 20px;
+}
+
+.LadoDireito h1{
+  font-size: 20px;
+}
