@@ -1,7 +1,7 @@
 <?php
 
 function CriarRecompensa($descricao, $valor, $projetoid){
-    $query = "insert into bd_projpalco.recompensa(Descricao, Valor, ProjetoIDFK, DataCriacao) 
+    $query = "insert into bd_projpalco.Recompensa(Descricao, Valor, ProjetoIDFK, DataCriacao) 
     values('".$descricao."',".$valor.",".$projetoid.", current_date())"; 
     $resultado = ExecutaQueryRecompensa($query);
 }
