@@ -1,63 +1,62 @@
+CREATE SCHEMA IF NOT EXISTS bd_projpalco;
 
-USE bd_projpalco;
-
-create table bd_projpalco.Usuario(
-	UsuarioID int primary key not null auto_increment,
-    Nome varchar(60) not null,
-    Email varchar(45) not null,
-    Senha varchar(32) not null,
-    CPF varchar(11) not null,
-    CEP varchar(8) not null,
-    Rua varchar(25) not null,
-    Bairro varchar(25) not null,
-    Cidade varchar(45) not null,
-    NumeroResidencia int null,
-    Bloqueado bool,
-    DataCriacao date not null,
-    DataModificacao date null
+CREATE TABLE IF NOT EXISTS bd_projpalco.Usuario (
+    UsuarioID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nome VARCHAR(60) NOT NULL,
+    Email VARCHAR(45) NOT NULL,
+    Senha VARCHAR(32) NOT NULL,
+    CPF VARCHAR(11) NOT NULL,
+    CEP VARCHAR(8) NOT NULL,
+    Rua VARCHAR(25) NOT NULL,
+    Bairro VARCHAR(25) NOT NULL,
+    Cidade VARCHAR(45) NOT NULL,
+    NumeroResidencia INT NULL,
+    Bloqueado BOOL,
+    DataCriacao DATE NOT NULL,
+    DataModificacao DATE NULL
 );
 
-create table bd_projpalco.Projeto(
-	ProjetoID int primary key not null auto_increment,
-    Nome varchar(60) not null,
-    Resumo varchar(500) not null,
-    Descricao varchar(1000) null,
-    ValorMeta decimal(7,2) not null,
-    Publico boolean not null,
-    DataFim date not null,
-    UsuarioIDFK int not null,
-    DataCriacao date not null,
-    DataModificacao date null,
-    foreign key(UsuarioIDFK) references bd_projpalco.Usuario(UsuarioID)
+CREATE TABLE IF NOT EXISTS bd_projpalco.Projeto (
+    ProjetoID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Nome VARCHAR(60) NOT NULL,
+    Resumo VARCHAR(500) NOT NULL,
+    Descricao VARCHAR(1000) NULL,
+    ValorMeta DECIMAL(7,2) NOT NULL,
+    Publico BOOLEAN NOT NULL,
+    DataFim DATE NOT NULL,
+    UsuarioIDFK INT NOT NULL,
+    DataCriacao DATE NOT NULL,
+    DataModificacao DATE NULL,
+    FOREIGN KEY(UsuarioIDFK) REFERENCES bd_projpalco.Usuario(UsuarioID)
 );
 
-create table bd_projpalco.Midia(
-	MidiaID int primary key not null auto_increment,
-    Arquivo longblob not null,
-    Descricao varchar(60) null,
-    TipoArquivo varchar(10) null,
-    ProjetoIDFK int not null,
-    DataCriacao date not null,
-    DataModificacao date null,
-    foreign key (ProjetoIDFK) references bd_projpalco.Projeto(ProjetoID)
+CREATE TABLE IF NOT EXISTS bd_projpalco.Midia (
+    MidiaID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Arquivo LONGBLOB NOT NULL,
+    Descricao VARCHAR(60) NULL,
+    TipoArquivo VARCHAR(10) NULL,
+    ProjetoIDFK INT NOT NULL,
+    DataCriacao DATE NOT NULL,
+    DataModificacao DATE NULL,
+    FOREIGN KEY (ProjetoIDFK) REFERENCES bd_projpalco.Projeto(ProjetoID)
 );
 
-create table bd_projpalco.Recompensa(
-	RecompensaID int primary key not null auto_increment,
-    Descricao varchar(120) not null,
-    Valor decimal(7,2) not null,
-    ProjetoIDFK int not null,
-    DataCriacao date not null,
-    DataModificacao date null,
-    foreign key (ProjetoIDFK) references bd_projpalco.Projeto(ProjetoID)
+CREATE TABLE IF NOT EXISTS bd_projpalco.Recompensa (
+    RecompensaID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Descricao VARCHAR(120) NOT NULL,
+    Valor DECIMAL(7,2) NOT NULL,
+    ProjetoIDFK INT NOT NULL,
+    DataCriacao DATE NOT NULL,
+    DataModificacao DATE NULL,
+    FOREIGN KEY (ProjetoIDFK) REFERENCES bd_projpalco.Projeto(ProjetoID)
 );
 
-create table bd_projpalco.AgendaCultural(
-	AgendaCultural int primary key not null auto_increment,
-    Imagem blob not null,
-    URL varchar(2083) not null,
-    ProjetoIDFK int null,
-    DataCriacao date not null,
-    DataModificacao date null,
-    foreign key (ProjetoIDFK) references bd_projpalco.Projeto(ProjetoID)
+CREATE TABLE IF NOT EXISTS bd_projpalco.AgendaCultural (
+    AgendaCultural INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    Imagem BLOB NOT NULL,
+    URL VARCHAR(2083) NOT NULL,
+    ProjetoIDFK INT NULL,
+    DataCriacao DATE NOT NULL,
+    DataModificacao DATE NULL,
+    FOREIGN KEY (ProjetoIDFK) REFERENCES bd_projpalco.Projeto(ProjetoID)
 );
