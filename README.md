@@ -22,4 +22,19 @@ Instalação e Configuração
 Inicie um servidor local:
 *php -S localhost:8000 
 *Acesse a aplicação via navegador: http://localhost:8000
-*Ou inicie o Apache e MySQL pelo painel de controle do XAMPP. Acesse a aplicação via navegador: http://localhost/projetopalco.
+*Ou inicie o Apache e MySQL pelo painel de controle do XAMPP. Acesse a aplicação via navegador: http://localhost/projetopalco./
+
+# Docker
+
+## Construir e iniciar os containers
+docker compose up -d
+
+## Encerrar containers
+docker compose down
+
+## Reconstruir containers
+docker compose down
+docker compose build
+docker compose up -d
+
+

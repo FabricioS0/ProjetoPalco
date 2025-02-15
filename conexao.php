@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
+$servername = "db";  // Nome do serviço no docker-compose
 $database = "bd_projpalco";
 $username = "root";
-$password = "";
+$password = "root";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
