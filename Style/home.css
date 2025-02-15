@@ -8,7 +8,7 @@ body {
 
 .eventResume {
   display: grid;
-  background-image: url(/Style/Imgs/img_home.jpg);
+  background-image: url(/ProjetoPalco/Style/Imgs/img_home.jpg);
   background-size: cover;
   background-position: center;
   justify-content: center;
@@ -106,7 +106,7 @@ body {
  }
  
  .quemSomos{
-  background-image: url(/Style/Imgs/img_home2.jpg);
+  background-image: url(/ProjetoPalco/Style/Imgs/img_home2.jpg);
   height: 55vh;
   display: flex;
   justify-content: center;
