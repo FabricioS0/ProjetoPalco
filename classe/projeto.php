@@ -1,7 +1,7 @@
 <?php
 
 function CriarProjeto($nome, $resumo, $valor, $datafim, $usuarioId){
-    $query = "insert into bd_projpalco.projeto(Nome, Resumo, ValorMeta, Publico, DataFim, UsuarioIDFK, DataCriacao) 
+    $query = "insert into bd_projpalco.Projeto(Nome, Resumo, ValorMeta, Publico, DataFim, UsuarioIDFK, DataCriacao) 
     values('".$nome."','".$resumo."',".$valor.",false,'".$datafim."',".$usuarioId.",current_date())";
     $resultado = ExecutaQueryProjeto($query);
 }
@@ -14,13 +14,13 @@ function AdicionaDescricaoProjeto($descricao, $projetoId){
 }
 
 function PesquisaTodos(){
-    $query = "select * from  bd_projpalco.projeto";
+    $query = "select * from  bd_projpalco.Projeto";
     $resultado = ExecutaQueryProjeto($query);
     return $resultado;
 }
 
 function PesquisaPorId($id){
-    $query = "select * from  bd_projpalco.projeto where projetoid = ".$id;
+    $query = "select * from  bd_projpalco.Projeto where projetoid = ".$id;
     $resultado = ExecutaQueryProjeto($query);
     foreach($resultado as $item){
         return $item;
@@ -28,13 +28,13 @@ function PesquisaPorId($id){
 }
 
 function PesquisaPorNome($nome){
-    $query = "select * from  bd_projpalco.projeto where nome like '%".$nome."%'";
+    $query = "select * from  bd_projpalco.Projeto where nome like '%".$nome."%'";
     $resultado = ExecutaQueryProjeto($query);
     return $resultado;
 }
 
 function PesquisaPorUsuario($usuarioId){
-    $query = "select * from  bd_projpalco.projeto where UsuarioIDFK = ".$usuarioId;
+    $query = "select * from  bd_projpalco.Projeto where UsuarioIDFK = ".$usuarioId;
     $resultado = ExecutaQueryProjeto($query);
     return $resultado;
 }
