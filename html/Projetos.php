@@ -1,7 +1,7 @@
 <?php
 include('../controller/projetos.php');
 
-$projetos = pesquisarTodosProjetos();
+$projetos = pesquisarProjetos();
 
 echo '<!DOCTYPE html>
 <html lang="en">
@@ -14,53 +14,61 @@ echo '<!DOCTYPE html>
 </head>
 <body>
     <header class="content-top">
-        <img src="/ProjetoPalco/Style/Imgs/Logo.png" alt="">
+        <a href="home.html"><img src="/ProjetoPalco/Style/Imgs/Logo.png" alt=""></a>
         <div class="buttons-cabecalho">
-          <a href=""><button><img src="/ProjetoPalco/Style/Imgs/icons8-casa-50 (1).png" alt=""> Início</button></a>
-          <a href=""><button><img src="/ProjetoPalco/Style/Imgs/icons8-musical-50.png" alt=""> Projetos</button></a>
-          <a href=""><button> <img src="/ProjetoPalco/Style/Imgs/icons8-informação-30.png" alt=""> Quem somos</button></a>
+            <a href="home.html"><button><img src="/ProjetoPalco/Style/Imgs/icons8-casa-50 (1).png" alt=""> Início</button></a>
+            <a href="Projetos.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-musical-50.png" alt=""> Projetos</button></a>
+            <a href="Quem_Somos.html"><button> <img src="/ProjetoPalco/Style/Imgs/icons8-informação-30.png" alt=""> Quem somos</button></a>
         </div>
         <form action="" class="search-container">
           <input type="text" placeholder="Busca" class="search-input">
           <button class="search-button">
             🔍
           </button>
-        </form>
-        <a href=""><button class="conta">CONTA</button></a>
+        </form>';
+        if(VerificaLogado()){
+            echo '<a href="pag_Perfil.php"><button class="conta">PERFIL</button></a>';
+        }else{
+            echo '<a href="login.html"><button class="conta">LOGIN</button></a>';
+        }
+    echo '
     </header>
     <div class="Container">
         <button class="row_back"><a href="./pag_Perfil.html">←</a></button>
         <h1>Ajude em um projeto e ganhe <br> recompensas incríveis!</h1>
         <div class="projetos-destaque">
             <h2>Em destaque:</h2>
-            <div class="container-projetos">
-                <div class="projeto">  ';
+            <div class="container-projetos">';
                     foreach($projetos as $projeto){
-                        echo '<img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
-                        <h1>'.$projeto['Nome'].'</h1>
-                        <p>'.$projeto['Resumo'].'</p>
-                        <div class="valores">
-                            <p>'.$projeto['ValorMeta'].'</p>
-                            <p>Termina em: '.$projeto['DataFim'].'</p>
+                        echo '
+                        <div class="projeto">';
+                            $image = pesquisarPrimeriaImagem($projeto['ProjetoID']);
+                            echo '<img src="data:image/jpeg;base64,'.base64_encode($image['Arquivo']).'" alt="Foto do projeto" class="imagem-projeto">
+                            <h1>'.$projeto['Nome'].'</h1>
+                            <p>'.$projeto['Resumo'].'</p>
+                            <div class="valores">
+                                <p>'.$projeto['ValorMeta'].'</p>
+                                <p>Termina em: '.$projeto['DataFim'].'</p>
+                            </div>
                         </div>';
                     }
-                echo '</div>
+                echo '
             </div>
             <hr style="border: none; height: 1px; background-color: #9FD86B;">
         </div>
         <div class="projetos">
             <h1>Todos os projetos:</h1>
-            <form action="" class="busca">
-                <label for="name">nome do projeto <br><input type="text" name="name" id="name"></label>
+            <form action="../controller/pesquisaProjetoNome.php" method="post" class="busca">
+                <label for="nome">nome do projeto <br><input type="text" name="nome" id="nome"></label>
                 
-                <label for="categoria">Categoria <br>
+                <!-- <label for="categoria">Categoria <br>
                     <select name="" id="categoria">
                         <option value="" disabled selected>Selecione</option>
                         <option value="op1">Opção 1</option>
                         <option value="op2">Opção 2</option>
                         <option value="op3">Opção 3</option>
                     </select>
-                </label>
+                </label>-->
                 
                 <button type="submit">BUSCAR</button>
             </form>

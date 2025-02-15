@@ -28,7 +28,7 @@ function PesquisaPorId($id){
 }
 
 function PesquisaPorNome($nome){
-    $query = "select * from  bd_projpalco.projeto where nome = '".$nome."'";
+    $query = "select * from  bd_projpalco.projeto where nome like '%".$nome."%'";
     $resultado = ExecutaQueryProjeto($query);
     return $resultado;
 }
