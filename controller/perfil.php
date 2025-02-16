@@ -9,6 +9,10 @@ function VerificaLogadoCookies(){
     }
 }
 
+function VerificaLogado(){
+    return VerificaCookieLoginUsuario();
+}
+
 function RetornaUsuarioLogado(){
     VerificaLogadoCookies();
     return PesquisaUsuarioId(RetornaUsuarioLogadoCookie());

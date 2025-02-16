@@ -13,7 +13,7 @@ echo '<!DOCTYPE html>
 </head>
 <body>
     <div class="Container">
-        <p><button class="row_back"><a href="pag_Perfil.php">←</button></a>Login</p>
+        <p><button class="row_back"><a href="pag_Perfil.php">←</button></a>Página de Perfil</p>
         <h1>Altere os dados do seu usuario.</h1>
         <div class="forms">
             <form action="../controller/editaUsuario.php" method="post" enctype="multipart/form-data">
@@ -24,13 +24,13 @@ echo '<!DOCTYPE html>
                     <input type="file" id="file_input" name="foto" accept="image/*">
                 </div>
                 <div class="form_group">
-                    <label for="name">Nome completo<input type="text" name="nome" id="nome" required></label>
-                    <label for="Rua">Rua<input type="text" name="rua" id="rua"></label>
+                    <label for="name">Nome completo<input type="text" name="nome" id="nome" required value="'.$usuario['Nome'].'"></label>
+                    <label for="Rua">Rua<input type="text" name="rua" id="rua" value="'.$usuario['Rua'].'"></label>
                 </div>
                 <div class="form_group">
-                    <label for="Bairro">Bairro<input type="text" name="bairro" id="bairro"></label>
-                    <label for="Cidade">Cidade<input type="text" name="cidade" id="cidade"></label>
-                    <label for="Cep">Cep<input type="text" name="cep" id="cep"></label>
+                    <label for="Bairro">Bairro<input type="text" name="bairro" id="bairro" value="'.$usuario['Bairro'].'"></label>
+                    <label for="Cidade">Cidade<input type="text" name="cidade" id="cidade" value="'.$usuario['Cidade'].'"></label>
+                    <label for="Cep">Cep<input type="text" name="cep" id="cep" value="'.$usuario['CEP'].'"></label>
                 </div>
                 <div class="form_group">
                     <label for="senha">Senha<input type="password" id="senha" name="senha" 

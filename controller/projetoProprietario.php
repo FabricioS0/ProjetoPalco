@@ -10,6 +10,10 @@ function VerificaLogin(){
     }
 }
 
+function VerificaLogado(){
+    return VerificaCookieLoginUsuario();
+}
+
 function VerificaProjetoUsuario($usuarioId){
     if(RetornaUsuarioLogadoCookie() != $usuarioId){
         header('Location: '.'../html/Projeto.php?projetoId='.$_GET['projetoId']);

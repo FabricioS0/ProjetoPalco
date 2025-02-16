@@ -9,6 +9,7 @@ echo '
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/Style_Perfil.css">
+    <link rel="stylesheet" href="/ProjetoPalco/Style/cabecalho&header.css">
     <title>Perfil</title>
 </head>
 <body>
@@ -38,7 +39,7 @@ echo '
         </div>
         <div class="perfil">
             <p id="nome_pessoa">'; echo $usuario['Nome']; echo '</p>
-            <a href="#" id="edicao">Editar Perfil</a>
+            <a href="alteraUsuario.php" id="edicao">Editar Perfil</a>
         </div>
         <div class="body_perfil">
             <a href="#Ativos">ATIVOS</a>
@@ -54,7 +55,7 @@ echo '
             margin-top: 80px;">';
             foreach ($projetosUsuario as $projeto){
                 echo '<!-- projeto -->
-                <a href="Projeto_Proprietario.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
+                <a href="Projeto_proprietario.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
                     <div style="width: 350px; 
                         height: 450px;
                         background: white;

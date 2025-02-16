@@ -47,9 +47,13 @@ echo '<!DOCTYPE html>
     <div class="Container">
         <div class="header">
             <button class="row_back"><a href="pag_Perfil.php">←</a></button>
-            <div class="buttons-projetos">
-                <button class="desativar">DESATIVAR</button>
-                <button class="editar">EDITAR</button>
+            <div class="buttons-projetos">';
+                if($projeto['Publico']==false){
+                    echo '<a href="../controller/ativaDesativaProjeto.php?projetoId='.$projeto['ProjetoID'].'"><button class="desativar">PUBLICAR</button><a/>';
+                }else{
+                    echo '<a href="../controller/ativaDesativaProjeto.php?projetoId='.$projeto['ProjetoID'].'"><button class="desativar">PRIVAR</button><a/>';
+                }
+                echo '<a href=""><button class="editar">EDITAR</button></a>
             </div>
         </div>
         <div class="topo">

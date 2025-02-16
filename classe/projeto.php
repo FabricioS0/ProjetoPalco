@@ -13,6 +13,16 @@ function AdicionaDescricaoProjeto($descricao, $projetoId){
     ExecutaQueryProjeto($query);
 }
 
+function PublicarProjeto($projetoId){
+    $query = "update bd_projpalco.Projeto set Publico = True where ProjetoID=".$projetoId;
+    $resultado = ExecutaQueryProjeto($query);
+}
+
+function PrivarProjeto($projetoId){
+    $query = "update bd_projpalco.Projeto set Publico = False where ProjetoID=".$projetoId;
+    $resultado = ExecutaQueryProjeto($query);
+}
+
 function PesquisaTodos(){
     $query = "select * from  bd_projpalco.Projeto";
     $resultado = ExecutaQueryProjeto($query);
