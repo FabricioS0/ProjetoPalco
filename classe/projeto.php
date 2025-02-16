@@ -24,7 +24,7 @@ function PrivarProjeto($projetoId){
 }
 
 function PesquisaTodos(){
-    $query = "select * from  bd_projpalco.Projeto";
+    $query = "select * from  bd_projpalco.Projeto where Publico = true";
     $resultado = ExecutaQueryProjeto($query);
     return $resultado;
 }

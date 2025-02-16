@@ -1,4 +1,7 @@
 <?php
+include('../controller/home.php');
+
+$projetos = PesquisaTodosProjetos();
 
 echo '<!DOCTYPE html>
 <html lang="pt-br">
@@ -20,8 +23,13 @@ echo '<!DOCTYPE html>
         <form action="" class="search-container">
           <input type="text" placeholder="Busca" class="search-input">
           <button class="search-button">🔍</button>
-        </form>
-        <a href=""><button class="conta">CONTA</button></a>
+        </form>';
+            if(VerificaLogado()){
+                echo '<a href="pag_Perfil.php"><button class="conta">PERFIL</button></a>';
+            }else{
+                echo '<a href="login.html"><button class="conta">LOGIN</button></a>';
+            }
+        echo '
     </header>
     <div class="eventResume">
         <h1>Evento X</h1>
@@ -32,19 +40,23 @@ echo '<!DOCTYPE html>
         <h1>Confira os projetos que estão bombando!</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, mollitia! Aut, nobis! Odit, nihil. </p>
     </div>
-        <div class="container-projetos">
-            <div class="projeto">
-                <img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
-                <h1>Projeto X</h1>
-                <p>Donec et mi ante. Vivamus sem risus, 
-                    bibendum eget metus a, posuere auctor 
-                    orci.
-                </p>
-                <div class="valores">
-                    <p>R$100,00</p>
-                    <p>Termina em: 12/12/2004</p>
+        <div class="container-projetos">';
+        foreach($projetos as $projeto){
+            echo '
+            <a href="Projeto.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
+                <div class="projeto">';
+                    $image = pesquisarPrimeriaImagem($projeto['ProjetoID']);
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode($image['Arquivo']).'" alt="Foto do projeto" style="height:250px">
+                    <h1>'.$projeto['Nome'].'</h1>
+                    <p>'.$projeto['Resumo'].'</p>
+                    <div class="valores">
+                        <p>'.$projeto['ValorMeta'].'</p>
+                        <p>Termina em: '.$projeto['DataFim'].'</p>
+                    </div>
                 </div>
-        </div>
+            </a>';
+        }        
+        echo '</div>
     </div>  
     <div class="quemSomos" id="QuemSomos">
         <div class="container-area">
