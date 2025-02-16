@@ -4,11 +4,11 @@ include('../classe/usuario.php');
 
 var_dump($_GET['projetoId']);
 if($_GET['projetoId'] == null){
-    header('Location: '.'../html/home.html');
+    header('Location: '.'../html/home.php');
 }else{
     $projeto = PesquisaPorId($_GET['projetoId']);
     if($projeto == null){
-        header('Location: '.'../html/home.html');
+        header('Location: '.'../html/home.php');
     }
     if(RetornaUsuarioLogadoCookie() == null){
         header('Location: '.'../html/login.php');

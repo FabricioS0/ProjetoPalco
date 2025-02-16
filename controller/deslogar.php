@@ -2,5 +2,5 @@
 include('../classe/usuario.php');
 
 UnsetCookieUsuario();
-header('Location: '.'../html/home.html');
+header('Location: '.'../html/home.php');
 ?>
