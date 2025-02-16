@@ -12,6 +12,7 @@ if($projeto == null){
 
 $recompensas = PesquisarRecompensas($projeto['ProjetoID']);
 $midias = PesquisarMidias($projeto['ProjetoID']);
+$usuario = RetornaUsuarioProjeto($projeto['UsuarioIDFK']);
 
 echo '<!DOCTYPE html>
 <html lang="en">
@@ -59,6 +60,7 @@ echo '<!DOCTYPE html>
             <div id="lado-direito">
                 <h2 id="titulo_projeto">'.$projeto['Nome'].'</h2>
                 <p id="descricao_projeto">'.$projeto['Resumo'].'</p>
+                <p id="">[imagem]-'.$usuario['Nome'].'</p>
                 <p id="metas">Meta: '.$projeto['ValorMeta'].'</p>
                 <p id="Data_projeto">Data de término: '.$projeto['DataFim'].'</p>
             </div>

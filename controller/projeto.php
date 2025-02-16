@@ -16,6 +16,10 @@ function VerificaLogado(){
     return VerificaCookieLoginUsuario();
 }
 
+function RetornaUsuarioProjeto($usuarioId){
+    return PesquisaUsuarioId($usuarioId);
+}
+
 function PesquisarMidias($projetoId){
     return PesquisarMidiaPorProjetoId($projetoId);
 }
