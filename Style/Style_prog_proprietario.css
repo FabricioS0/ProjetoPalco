@@ -31,6 +31,32 @@ body {
     text-decoration: none;
   }
 
+  
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-projetos{
+  display: flex;
+  gap: 20px;
+}
+
+.desativar{
+  background-color: #f9f9f9;
+  font-size: 24px;
+  border: none;
+  color: #095169;
+}
+
+.editar{
+  background-color: #f9f9f9;
+  font-size: 24px;
+  border: 0.5px solid #095169;
+  color: #095169;
+  border-radius: 2px;
+}
+
   .recompensa {
     width: 300px;
     height: 100px;

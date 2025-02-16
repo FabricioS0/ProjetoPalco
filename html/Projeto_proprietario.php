@@ -25,7 +25,13 @@ echo '<!DOCTYPE html>
 <body>
     
     <div class="Container">
-        <button class="row_back"><a href="pag_Perfil.php">←</a></button>
+        <div class="header">
+            <button class="row_back"><a href="pag_Perfil.php">←</a></button>
+            <div class="buttons-projetos">
+                <button class="desativar">DESATIVAR</button>
+                <button class="editar">EDITAR</button>
+            </div>
+        </div>
         <div class="topo">
             <div id="lado-esquerdo">';
             if($midias!=null){
