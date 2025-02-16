@@ -14,15 +14,15 @@ if(isset($_POST)){
             }
             else{
                 echo "Usuario não validado";
-                header('Location: '.'../html/login.html');
+                header('Location: '.'../html/login.php');
             }
         }else{
             echo "Usuario Bloqueado";
-            header('Location: '.'../html/login.html');
+            header('Location: '.'../html/login.php');
         }
     }else{
         echo "Usuario não encontrado";
-        header('Location: '.'../html/login.html');
+        header('Location: '.'../html/login.php');
     }
 }
 ?>

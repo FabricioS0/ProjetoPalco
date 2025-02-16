@@ -6,7 +6,7 @@ include('../classe/midia.php');
 
 function VerificaLogin(){
     if(!VerificaCookieLoginUsuario()){
-        header('Location: '.'../html/login.html');
+        header('Location: '.'../html/login.php');
     }
 }
 
