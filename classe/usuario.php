@@ -34,16 +34,14 @@ function PesquisaUsuarioEmail($email){
     return $resultado->fetch_assoc();
 }
 
-function AtualizarUsuario($id, $nome, $email, $senha, $cpf, $cep, $rua, $bairro, $cidade){
+function AtualizarUsuario($id, $nome, $cep, $rua, $bairro, $cidade, $senha){
     $query = "update bd_projpalco.Usuario set 
     Nome = '".$nome."'
-    , Email = '".$email."'
-    , Senha = ".$senha."
-    , CPF = '".$cpf."'
     , CEP = '".$cep."'
     , Rua = '".$rua."'
     , Bairro = '".$bairro."'
     , Cidade = '".$cidade."' 
+    , Senha = '".$senha."'
     , DataModificacao = current_date() 
     where UsuarioID = ".$id;
 }

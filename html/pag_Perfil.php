@@ -34,7 +34,7 @@ echo '
             margin-top: 80px;">';
             foreach ($projetosUsuario as $projeto){
                 echo '<!-- projeto -->
-                <a href="Projeto.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
+                <a href="Projeto_Proprietario.php?projetoId='; echo $projeto['ProjetoID']; echo '" style="text-decoration: none; color: inherit;">
                     <div style="width: 350px; 
                         height: 450px;
                         background: white;
