@@ -26,7 +26,7 @@ echo '<!DOCTYPE html>
         <div class="buttons-cabecalho">
           <a href="home.html"><button><img src="/ProjetoPalco/Style/Imgs/icons8-casa-50 (1).png" alt=""> Início</button></a>
           <a href="Projetos.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-musical-50.png" alt=""> Projetos</button></a>
-          <a href="Quem_Somos.html"><button> <img src="/ProjetoPalco/Style/Imgs/icons8-informação-30.png" alt=""> Quem somos</button></a>
+          <a href="home.html#QuemSomos"><button> <img src="/ProjetoPalco/Style/Imgs/icons8-informação-30.png" alt=""> Quem somos</button></a>
         </div>
         <form action="" class="search-container">
           <input type="text" placeholder="Busca" class="search-input">
@@ -34,7 +34,7 @@ echo '<!DOCTYPE html>
             🔍
           </button>
         </form>
-        <a href=""><button class="conta">CONTA</button></a>
+        <a href="Projetos.php"><button class="conta">CONTA</button></a>
     </header>
     <div class="Container">
         <button class="row_back"><a href="./pag_Perfil.html">←</a></button>
