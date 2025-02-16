@@ -27,14 +27,14 @@ echo '<!DOCTYPE html>
             if(VerificaLogado()){
                 echo '<a href="pag_Perfil.php"><button class="conta">PERFIL</button></a>';
             }else{
-                echo '<a href="login.html"><button class="conta">LOGIN</button></a>';
+                echo '<a href="login.php"><button class="conta">LOGIN</button></a>';
             }
         echo '
     </header>
     <div class="eventResume">
         <h1>Evento X</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod quia eos perferendis ipsum sapiente distinctio unde sit!</p>
-        <a href=""><button class="botaoEvent">Ver evento</button></a>
+        <a href="#EventDestaque"><button class="botaoEvent">Ver evento</button></a>
     </div>
       <div class="projetos-destaque">
         <h1>Confira os projetos que estão bombando!</h1>
@@ -67,11 +67,10 @@ echo '<!DOCTYPE html>
                     ao nosso público, aumentando sua visibilidade e atraindo os apoios
                     necessários, aumentando as chances de sucesso.</p>
                     <div class="botoesSomos"></div>
-                <a href="Cadastro_Projeto1.html"><button class="divulProj"><b>DIVULGUE SEU PROJETO</b></button></a>           
-            <a href="Quem_Somos.html"><button class="VerMais"><b>VER MAIS</b></button></a> 
+                <a href="Cadastro_Projeto1.php"><button class="divulProj"><b>DIVULGUE SEU PROJETO</b></button></a>           
         </div>
     </div>
-    <div class="EventDestaque">
+    <div id="EventDestaque">
         <h2>Afim de sair? Confira nossa agenda cultura</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint nihil aperiam fugit id et optio mollitia, expedita reiciendis voluptatem nobis.</p>
     </div>
