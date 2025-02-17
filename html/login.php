@@ -30,7 +30,7 @@ echo '<!DOCTYPE html>
                 <button type="submit" class="submit">Entrar</button>
             </form>
             <div class="signup">
-                <p class="cadastro">Não possui conta? <a href="Cadastro.html">Fazer cadastro</a></p>
+                <p class="cadastro">Não possui conta? <a href="Cadastro.php">Fazer cadastro</a></p>
             </div>
         </div>
     </div>

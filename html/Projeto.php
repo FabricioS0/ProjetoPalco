@@ -45,7 +45,7 @@ echo '<!DOCTYPE html>
     echo '
     </header>
     <div class="Container">
-        <button class="row_back"><a href="./pag_Perfil.html">←</a></button>
+        <button class="row_back"><a href="./pag_Perfil.php">←</a></button>
         <div class="topo">
             <div id="lado-esquerdo">';
                 if($midias!=null){

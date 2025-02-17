@@ -14,7 +14,7 @@ if($_GET['projetoId'] == null){
         header('Location: '.'../html/login.php');
     }
     if($projeto['UsuarioIDFK']!=RetornaUsuarioLogadoCookie()){
-        header('Location: '.'../html/pag_Perfil.html');
+        header('Location: '.'../html/pag_Perfil.php');
     }
     if($projeto['Publico']==false){
         PublicarProjeto($projeto['ProjetoID']);

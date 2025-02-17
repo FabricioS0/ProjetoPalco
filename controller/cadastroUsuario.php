@@ -14,15 +14,15 @@ if(isset($_POST)){
                 header('Location: '.'../html/pag_Perfil.php');
             }else{
                 echo "Usuário não cadastrado! Ocorreu algum erro";
-                header('Location: '.'../html/Cadastro.html');
+                header('Location: '.'../html/Cadastro.php');
             }
         }else{
             echo "Esse email já está cadastrado";
-            header('Location: '.'../html/Cadastro.html');
+            header('Location: '.'../html/Cadastro.php');
         }
     }else{
         echo "Senhas não são iguais!";
-        header('Location: '.'../html/Cadastro.html');
+        header('Location: '.'../html/Cadastro.php');
     }
 }
 ?>

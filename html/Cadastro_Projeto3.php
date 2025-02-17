@@ -10,7 +10,7 @@ echo '<!DOCTYPE html>
     </head>
     <body>
         <div class="Container">
-                <a href="Cadastro_Projeto2.html"><button class="row_back">←</button><b>Cadastrar projeto</a>
+                <a href="Cadastro_Projeto2.php"><button class="row_back">←</button><b>Cadastrar projeto</a>
                 <div class="progress-bar">
                     <div class="step active"></div>
                     <div class="step active"></div>
