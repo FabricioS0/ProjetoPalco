@@ -51,10 +51,16 @@ create table bd_projpalco.Recompensa(
     foreign key (ProjetoIDFK) references bd_projpalco.Projeto(ProjetoID)
 );
 
+drop table bd_projpalco.AgendaCultural;
+
 create table bd_projpalco.AgendaCultural(
-	AgendaCultural int primary key not null auto_increment,
-    Imagem blob not null,
+	AgendaCulturalID int primary key not null auto_increment,
+    Imagem longblob null,
+    Nome varchar(50) not null,
+    Descricao varchar(300) not null, 
     URL varchar(2083) not null,
+    LocalDescricao varchar(100) not null,
+    DataEvento date not null,
     ProjetoIDFK int null,
     DataCriacao date not null,
     DataModificacao date null,

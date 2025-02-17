@@ -8,7 +8,7 @@ body {
 
 .eventResume {
   display: grid;
-  background-image: url(/ProjetoPalco/Style/Imgs/img_home.jpg);
+  /* background-image: url(/ProjetoPalco/Style/Imgs/img_home.jpg); */
   background-size: cover;
   background-position: center;
   justify-content: center;

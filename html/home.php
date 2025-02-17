@@ -2,6 +2,7 @@
 include('../controller/home.php');
 
 $projetos = PesquisaTodosProjetos();
+$eventos = PesquisarEventos();
 
 echo '<!DOCTYPE html>
 <html lang="pt-br">
@@ -30,15 +31,21 @@ echo '<!DOCTYPE html>
                 echo '<a href="login.php"><button class="conta">LOGIN</button></a>';
             }
         echo '
-    </header>
-    <div class="eventResume">
-        <h1>Evento X</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod quia eos perferendis ipsum sapiente distinctio unde sit!</p>
-        <a href="#EventDestaque"><button class="botaoEvent">Ver evento</button></a>
+    </header>';
+        foreach($eventos as $evento){
+            $eventoDestaque = $evento;
+            break;
+        }
+        $imagemDestaque = $eventoDestaque['Imagem'];
+        echo'
+    <div class="eventResume" style="background-image: url(data:image/jpeg;base64,'.base64_encode($imagemDestaque).')">
+        <h1>'.$eventoDestaque['Nome'].'</h1>
+        <p>'.$eventoDestaque['Descricao'].'</p>
+        <a href="'.$eventoDestaque['URL'].'"><button class="botaoEvent">Ver evento</button></a>
+        
     </div>
       <div class="projetos-destaque">
         <h1>Confira os projetos que estão bombando!</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor, mollitia! Aut, nobis! Odit, nihil. </p>
     </div>
         <div class="container-projetos">';
         foreach($projetos as $projeto){
@@ -72,19 +79,24 @@ echo '<!DOCTYPE html>
     </div>
     <div id="EventDestaque">
         <h2>Afim de sair? Confira nossa agenda cultura</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint nihil aperiam fugit id et optio mollitia, expedita reiciendis voluptatem nobis.</p>
     </div>
-        <div class="eventosCult">
-            <div class="evento">
-                <img src="/ProjetoPalco/Style/Imgs/img_projeto.jpg" alt="">
-                <h1>Evento X</h1>
-                <p>Donec et mi ante. Vivamus sem risus, 
-                bibendum eget metus a, posuere auctor 
-                orci.</p>
-        <div class="LocData">
-            <p>Porto Seguro - BA</p>
-            <p>15/04/2025</p>
-        </div>
+        <div class="eventosCult">';
+        foreach($eventos as $evento){
+            echo '
+            <a href="'; echo $evento['URL']; echo '" style="text-decoration: none; color: inherit;">
+            <div class="evento">';
+                    $image = $evento['Imagem'];
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode($image).'" alt="Foto do evento" style="height:250px">
+                    <h1>'.$evento['Nome'].'</h1>
+                    <p>'.$evento['Descricao'].'</p>
+                    <div class="LocData">
+                        <p>'.$evento['LocalDescricao']; echo '</p>
+                        <p>'.$evento['DataEvento']; echo '</p>
+                    </div>
+                </div>
+            </a>';
+        }        
+        echo '
     </div>
 </div>
     <footer class="footer" >

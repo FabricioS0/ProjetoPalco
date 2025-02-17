@@ -31,4 +31,9 @@ select * from bd_projpalco.Recompensa;
 
 select * from bd_projpalco.Midia;
 
+select * from bd_projpalco.AgendaCultural;
+
+insert into bd_projpalco.AgendaCultural (LocalDescricao, Nome, Descricao, DataEvento, URL, ProjetoIDFK, DataCriacao) 
+values('Porto Seguro - BA', 'Rock in Bahia','Evento especial para os amantes de Rock nas praias de costa do descobrimento', date_add(current_date(), interval 10 day), 'https://www.youtube.com/watch?v=4qc2aHFlUQw', 31, current_date());
+
 update bd_projpalco.Midia set TipoArquivo = 'image' where MidiaID = 2 or MidiaID = 4 or MidiaID = 6 or MidiaID = 7 or MidiaID = 8

@@ -2,6 +2,7 @@
 include('../classe/projeto.php');
 include('../classe/midia.php');
 include('../classe/usuario.php');
+include('../classe/agendaCultural.php');
 
 function PesquisaTodosProjetos(){
     return PesquisaTodos();
@@ -16,6 +17,9 @@ function pesquisarPrimeriaImagem($projetoId){
     }
 }
 
+function PesquisarEventos(){
+    return PesquisaTodosEventos();
+}
 
 function VerificaLogado(){
     return VerificaCookieLoginUsuario();
