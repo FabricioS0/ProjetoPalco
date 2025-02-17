@@ -39,7 +39,7 @@ echo '<!DOCTYPE html>
             if(VerificaLogado()){
                 echo '<a href="pag_Perfil.php"><button class="conta">PERFIL</button></a>';
             }else{
-                echo '<a href="login.html"><button class="conta">LOGIN</button></a>';
+                echo '<a href="login.php"><button class="conta">LOGIN</button></a>';
             }
         echo '
         </header>
@@ -75,11 +75,11 @@ echo '<!DOCTYPE html>
             </div>
         </div>
         <div class="recompensa">
-            <h1>Recompensa</h1>
-            ';
+            <h1>Recompensa</h1>';
                 if($recompensas!=null){
                     foreach($recompensas as $recompensa){
-                        echo 'Decrição: '.$recompensa['Descricao'].'/ Valor: '.$recompensa['Valor'];
+                        echo '<p>Decrição: '.$recompensa['Descricao'].'</p> 
+                        <p>Valor: '.$recompensa['Valor'].'</p>';
                     }
                 }
             echo '
@@ -91,7 +91,7 @@ echo '<!DOCTYPE html>
               <p>
                 '.$projeto['Descricao'].'
               </p>
-            </div>;';
+            </div>';
           
             // <div class="sobre-midia">
             //   <div class="video">

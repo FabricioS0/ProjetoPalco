@@ -40,7 +40,7 @@ echo '<!DOCTYPE html>
         if(VerificaLogado()){
             echo '<a href="pag_Perfil.php"><button class="conta">PERFIL</button></a>';
         }else{
-            echo '<a href="login.html"><button class="conta">LOGIN</button></a>';
+            echo '<a href="login.php"><button class="conta">LOGIN</button></a>';
         }
     echo '
     </header>
