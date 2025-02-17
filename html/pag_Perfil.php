@@ -13,7 +13,11 @@ echo '
     <title>Perfil</title>
 </head>
 <body>
-        <header class="content-top">
+        <header class="content-top" Style="background-color: #095169;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;>
             <a href="home.php"><img src="/ProjetoPalco/Style/Imgs/Logo.png" alt=""></a>
             <div class="buttons-cabecalho">
                 <a href="home.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-casa-50 (1).png" alt=""> Início</button></a>
