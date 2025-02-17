@@ -70,7 +70,8 @@ echo '<!DOCTYPE html>
                     }
                 }
             }
-            echo '</div>
+            echo '
+            </div>
             <div id="lado-direito">
                 <h2 id="titulo_projeto">'.$projeto['Nome'].'</h2>
                 <p id="descricao_projeto">'.$projeto['Resumo'].'</p>
@@ -78,17 +79,21 @@ echo '<!DOCTYPE html>
                 <p id="Data_projeto">Data de término: '.$projeto['DataFim'].'</p>
             </div>
         </div>
-        <div class="recompensa">
-            <h1>Recompensa</h1>';
+        <h1>Recompensa</h1>
+        <div class="recompensa-container">';
                 if($recompensas!=null){
                     foreach($recompensas as $recompensa){
-                        echo '<p>Decrição: '.$recompensa['Descricao'].'</p> 
-                        <p>Valor: '.$recompensa['Valor'].'</p>';
+                        echo '
+                        <div class="recompensa">
+                            <p>'.$recompensa['Descricao'].'</p>
+                            <div class="valores">
+                                <p>Valor:'.$recompensa['Valor'].'</p>
+                            </div>
+                        </div>';
                     }
                 }
             echo '
         </div>
-        
         <section id="sobre" class="sobre-container">
             <div class="sobre-texto">
               <h2>Sobre o projeto</h2>
@@ -96,16 +101,6 @@ echo '<!DOCTYPE html>
                 '.$projeto['Descricao'].'
               </p>
             </div>';
-          
-            // <div class="sobre-midia">
-            //   <div class="video">
-            //     <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" 
-            //       title="Vídeo sobre o Projeto Palco" 
-            //       frameborder="0" 
-            //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            //       allowfullscreen>
-            //     </iframe>
-            //   </div>
               echo '
               <div class="imagens">';
               if($midias!=null){

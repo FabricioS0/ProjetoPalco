@@ -1,9 +1,12 @@
 <?php
 
 function PesquisarMidiaPorProjetoId($projetoId){
-    $query = "select * from bd_projpalco.Midia  
-    where ProjetoIDFK = " . $projetoId;
-    return ExecutaQueryMidia($query);
+    $query = "select * from bd_projpalco.Midia where ProjetoIDFK = " . $projetoId;
+    $resultado = ExecutaQueryMidia($query);
+    if(ContaQuantidadeMidia($resultado)==0){
+        return null;
+    }
+    return $resultado;
 }
 
 function CriarMidia($arquivo, $descricao, $projetoId, $tipoArquivo){    
@@ -16,6 +19,15 @@ function DeletaMidia($midiaId){
     $query = "delete from bd_projpalco.Midia 
     where MidiaID=".$midiaId;
     $resultado = ExecutaQueryMidia($query);
+}
+
+
+function ContaQuantidadeMidia($midias){
+    $i=0;
+    foreach($midias as $midia){
+        $i++;
+    }
+    return $i;
 }
 
 function ExecutaQueryMidia($query){

@@ -23,7 +23,18 @@ function DeletaRecompensa($recompensaId){
 function PesquisaRecompensaPorProjetoId($projetoId){
     $query = "select * from bd_projpalco.Recompensa where ProjetoIDFK = ".$projetoId; 
     $resultado = ExecutaQueryRecompensa($query);
+    if(ContaQuantidadeRecompensa($resultado)==0){
+        return null;
+    }
     return $resultado;
+}
+
+function ContaQuantidadeRecompensa($recompensas){
+    $i=0;
+    foreach($recompensas as $recompensa){
+        $i++;
+    }
+    return $i;
 }
 
 function ExecutaQueryRecompensa($query){

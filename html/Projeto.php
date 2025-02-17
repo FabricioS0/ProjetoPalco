@@ -67,6 +67,7 @@ echo '<!DOCTYPE html>
         </div>
         <h1>Recompensa</h1>
         <div class="recompensa-container">';
+            if($recompensas!=null){
                 foreach($recompensas as $recompensa){
                     echo '
                     <div class="recompensa">
@@ -76,6 +77,7 @@ echo '<!DOCTYPE html>
                         </div>
                     </div>';
                 }
+            }
             echo '
         </div>
         
@@ -84,17 +86,6 @@ echo '<!DOCTYPE html>
               <h2>Sobre o projeto</h2>
               <p>'.$projeto['Descricao'].'</p>
             </div>';
-          
-            // <div class="sobre-midia">
-            //   <div class="video">
-            //     <iframe 
-            //       src="https://www.youtube.com/embed/SEU_VIDEO_ID" 
-            //       title="Vídeo sobre o Projeto Palco" 
-            //       frameborder="0" 
-            //       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            //       allowfullscreen>
-            //     </iframe>
-            //   </div>
               echo '
               <div class="imagens">';
               if($midias!=null){

@@ -32,18 +32,20 @@ echo '<!DOCTYPE html>
             }
         echo '
     </header>';
-        foreach($eventos as $evento){
-            $eventoDestaque = $evento;
-            break;
+        if($eventos!=null){
+            foreach($eventos as $evento){
+                $eventoDestaque = $evento;
+                break;
+            }
+            $imagemDestaque = $eventoDestaque['Imagem'];
+            echo '
+            <div class="eventResume" style="background-image: url(data:image/jpeg;base64,'.base64_encode($imagemDestaque).')">
+                <h1>'.$eventoDestaque['Nome'].'</h1>
+                <p>'.$eventoDestaque['Descricao'].'</p>
+                <a href="'.$eventoDestaque['URL'].'"><button class="botaoEvent">Ver evento</button></a>
+            </div>';
         }
-        $imagemDestaque = $eventoDestaque['Imagem'];
         echo'
-    <div class="eventResume" style="background-image: url(data:image/jpeg;base64,'.base64_encode($imagemDestaque).')">
-        <h1>'.$eventoDestaque['Nome'].'</h1>
-        <p>'.$eventoDestaque['Descricao'].'</p>
-        <a href="'.$eventoDestaque['URL'].'"><button class="botaoEvent">Ver evento</button></a>
-        
-    </div>
       <div class="projetos-destaque">
         <h1>Confira os projetos que estão bombando!</h1>
     </div>
@@ -81,21 +83,23 @@ echo '<!DOCTYPE html>
         <h2>Afim de sair? Confira nossa agenda cultura</h2>
     </div>
         <div class="eventosCult">';
-        foreach($eventos as $evento){
-            echo '
-            <a href="'; echo $evento['URL']; echo '" style="text-decoration: none; color: inherit;">
-            <div class="evento">';
-                    $image = $evento['Imagem'];
-                    echo '<img src="data:image/jpeg;base64,'.base64_encode($image).'" alt="Foto do evento" style="height:250px">
-                    <h1>'.$evento['Nome'].'</h1>
-                    <p>'.$evento['Descricao'].'</p>
-                    <div class="LocData">
-                        <p>'.$evento['LocalDescricao']; echo '</p>
-                        <p>'.$evento['DataEvento']; echo '</p>
+        if($eventos!=null){
+            foreach($eventos as $evento){
+                echo '
+                <a href="'; echo $evento['URL']; echo '" style="text-decoration: none; color: inherit;">
+                <div class="evento">';
+                        $image = $evento['Imagem'];
+                        echo '<img src="data:image/jpeg;base64,'.base64_encode($image).'" alt="Foto do evento" style="height:250px">
+                        <h1>'.$evento['Nome'].'</h1>
+                        <p>'.$evento['Descricao'].'</p>
+                        <div class="LocData">
+                            <p>'.$evento['LocalDescricao']; echo '</p>
+                            <p>'.$evento['DataEvento']; echo '</p>
+                        </div>
                     </div>
-                </div>
-            </a>';
-        }        
+                </a>';
+            }        
+        }
         echo '
     </div>
 </div>

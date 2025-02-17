@@ -34,7 +34,7 @@ echo '<!DOCTYPE html>
                 <div class="form_group">
                     <label for="name">Nome do projeto<input type="text" name="nome" id="nome" required></label>
                     
-                    <label for="valor">De quanto precisa?<input type="number" name="valor" id="valor" oninput="moedaFormat()" placeholder="0,00" required></label>
+                    <label for="valor">De quanto precisa?<input type="number" name="valor" id="valor" oninput="moedaFormat2()" placeholder="0,00" required></label>
                 </div>
 
                 <div class="form_group">

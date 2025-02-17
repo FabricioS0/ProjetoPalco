@@ -22,9 +22,9 @@ echo '<!DOCTYPE html>
             <div class="forms">
                 <form action="../controller/cadastroRecompensa.php?ProjetoId='.$_GET['ProjetoId'].'" method="post">
                     <div class="form_group">
-                        <label for="descricao">O que a pessoa vai ganhar?<input type="text" name="descricao" id="descricao" required maxlength="100"></label>
+                        <label for="descricao">O que a pessoa vai ganhar?<input type="text" name="descricao" id="descricao" maxlength="100"></label>
                         
-                        <label for="valor">Valor da doação<input type="number" name="valor" id="valor" oninput="moedaFormat2()" placeholder="0,00" required></label>
+                        <label for="valor">Valor da doação<input type="number" name="valor" id="valor" oninput="moedaFormat2()" placeholder="0,00"></label>
                         <button type="submit" class="save_button">Salvar</button>
                     </div>
                     <hr>
