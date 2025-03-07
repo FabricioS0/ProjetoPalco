@@ -27,9 +27,9 @@ echo '<!DOCTYPE html>
     <header class="content-top">
         <a href="home.php"><img src="/ProjetoPalco/Style/Imgs/Logo.png" alt=""></a>
         <div class="buttons-cabecalho">
-            <a href="home.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-casa-50 (1).png" alt=""> Início</button></a>
-            <a href="Projetos.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-musical-50.png" alt=""> Projetos</button></a>
-            <a href="home.php#QuemSomos"><button> <img src="/ProjetoPalco/Style/Imgs/icons8-informação-30.png" alt=""> Quem somos</button></a>
+            <a href="home.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-casa-50.png" alt=""> Início</button></a>
+            <a href="Projetos.php"><button><img src="/ProjetoPalco/Style/Imgs/icons8-informação-50.png" alt=""> Projetos</button></a>
+            <a href="#QuemSomos"><button> <img src="/ProjetoPalco/Style/Imgs/icons8-musical-24.png" alt=""> Quem somos</button></a>
         </div>
         <form action="" class="search-container">
           <input type="text" placeholder="Busca" class="search-input">
