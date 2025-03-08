@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/Style_editCadastro.css">
+    <title>Edição de projeto</title>
+</head>
+<body>
+    <div class="Container">            
+        <p><button class="row_back"><a href="pag_Perfil.php">←</button></a>Pagina de projeto</p>
+        <h1>Edite seu projeto.</h1>
+        <div class="forms">
+            <form action="../controller/cadastroUsuario.php" method="post" enctype="multipart/form-data">
+                <div class="envio_imagem">
+                    <label for="file_input" class="imagem-preencher">
+                        <img src="../Style/Imgs/adicionar-foto.png" alt="Adicionar Foto" class="camera_icon">
+                    </label>
+                    <input type="file" id="file_input" name="foto" accept="image/*">
+                </div>
+                <div class="form_group">
+                    <label for="name">Nome do projeto<input type="text" name="nome" id="nome" required></label>                    
+                    <label for="valor">De quanto precisa?<input type="number" name="valor" id="valor" oninput="moedaFormat()" placeholder="0,00" required></label>                    
+                    <label for="Data">Quando termina?<input type="date" name="datafim" id="datafim" required></label>                    
+                </div>
+                <div class="form_group">
+                    <label for="Resumo">Resumo<input type="text" name="resumo" id="resumo" maxlength="100"></label>                                                          
+                </div>
+                <div class="MaxCaracteres">100 caracteres disponíveis</div>
+                <div class="form_group">
+                    <label for="descricao">O que a pessoa vai ganhar?<input type="text" name="descricao" id="descricao" maxlength="100"></label>
+                    <label for="valor">Valor da doação<input type="number" name="valor" id="valor" oninput="moedaFormat2()" placeholder="0,00"></label>
+                    </div>
+                    <div class="save_button_container">
+                        <button class="save_button">Salvar</button>
+                    </div>
+                <div class="form_group">
+                    <label for="descricao">Descrição detalhada do projeto<input type="text" name="descricao" id="descricao" maxlength="100" required></label>
+                </div>
+                <div class="MaxCaracteres1">100 caracteres disponíveis</div>
+                <div class="container-uploads">
+                    <div class="upload-box">
+                        <input type="file" id="video" name ="video" accept=".avi, .mp4, .wmv">
+                        <label for="video">
+                            <img src="../Style/Imgs/adicionar-foto.png" alt="Ícone de upload" width="50"> 
+                            <div>Anexar arquivo</div>
+                        </label> 
+                        <span>No formato AVI, MP4 ou WMV</span>
+                    </div>
+                    <div class="upload-box">
+                        <input type="file" id="imagem1" name ="imagem1" accept=".png, .jpg, .jpeg">
+                        <label for="imagem1">
+                            <img src="../Style/Imgs/adicionar-foto.png" alt="Ícone de upload" width="50">
+                            <div>Anexar arquivo</div>
+                        </label>
+                        <span>No formato PNG, JPG ou JPEG</span>
+                    </div>
+                    <div class="upload-box">
+                        <input type="file" id="imagem2" name ="imagem2" accept=".png, .jpg, .jpeg">
+                        <label for="imagem2">
+                            <img src="../Style/Imgs/adicionar-foto.png" alt="Ícone de upload" width="50">
+                            <div>Anexar arquivo</div>
+                        </label>
+                        <span>No formato PNG, JPG ou JPEG</span>
+                    </div>
+            </div>
+        <div class="container-submit"><button type="submit" class="submit_button">Alterar</button></div>
+    </body>
+<script src="/Stripts/script_cadastro_projeto.JS"></script>
+</html>
