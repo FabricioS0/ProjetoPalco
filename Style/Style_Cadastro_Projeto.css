@@ -17,6 +17,27 @@ body {
     align-items: center;
   }
 
+  .recompensa-container {
+    margin-top: 20px; 
+    padding: 20px; 
+    min-height: 150px; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    align-items: center; 
+    width: 100%;
+}
+
+.recompensa {
+  width: 300px;
+  height: 150px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
   a{
     text-decoration: none;
     color: black;

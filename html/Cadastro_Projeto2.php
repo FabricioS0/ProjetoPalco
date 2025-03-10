@@ -1,4 +1,7 @@
 <?php
+include('../controller/cadastroRecompensa.php');
+
+$recompensas = PesquisarRecompensas($projeto['ProjetoID']);
 echo '<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,9 +31,23 @@ echo '<!DOCTYPE html>
                         <button type="submit" class="save_button">Salvar</button>
                     </div>
                     <hr>
-                    <button type="submit" class="submit_button">Avançar</button>
+                    <a href="Cadastro_Projeto3.php?ProjetoId='.$_GET['ProjetoId'].'"><button class="submit_button">Avançar</button>
                 </form>
             </div>
+        </div>
+        <div class="recompensa-container">';
+            if($recompensas!=null){
+                foreach($recompensas as $recompensa){
+                    echo '
+                    <div class="recompensa">
+                        <p>'.$recompensa['Descricao'].'</p>
+                        <div class="valores">
+                            <p>Valor:'.$recompensa['Valor'].'</p>
+                        </div>
+                    </div>';
+                }
+            }
+            echo '
         </div>
     </body>
     </html>';

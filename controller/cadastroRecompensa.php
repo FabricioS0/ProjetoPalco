@@ -17,8 +17,12 @@ if(isset($_POST)){
         if($descricao!=null && $valor!=null){
             $rs=CriarRecompensa($descricao, $valor, $_GET['ProjetoId']);
         }
-        header('Location: '.'../html/Cadastro_Projeto3.php?ProjetoId='.$_GET['ProjetoId']);
+        header('Location: '.'../html/Cadastro_Projeto2.php?ProjetoId='.$_GET['ProjetoId']);
     }
+}
+
+function PesquisarRecompensas($projetoId){
+    return PesquisaRecompensaPorProjetoId($projetoId);
 }
 
 ?>
