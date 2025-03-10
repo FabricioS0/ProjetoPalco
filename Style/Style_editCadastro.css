@@ -6,6 +6,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
   }
   
   .Container {
@@ -141,6 +145,7 @@ body {
   .container-uploads {
     display: flex; 
     justify-content: space-around; 
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     margin-top: 60px;
     margin-bottom: 40px;
@@ -149,6 +154,7 @@ body {
   .upload-box {
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     padding: 20px;
     border: 2px dashed #98d8a5;
@@ -183,11 +189,42 @@ body {
     display: flex; 
     justify-content: space-around; 
     align-items: center;
-    margin-top: 60px;
+    margin-top: 300px;
     margin-bottom: 40px;
 }
 
+.imagens-cadastradas{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.imagens-cadastradas img{
+  display: grid;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin-left: 25px;
+}
+.imagens-cadastradas .excluir{
+
+  background-color: #FFFF;
+  border: none;
+}
+.imagens-cadastradas .excluir img{
+  width: 32px;
+  height: 32px;
+  margin-left: 200px;
+}
 .submit_button {
+  position: relative;
     background: #003f5c;
     color: #fff;
     border: none;
@@ -217,14 +254,14 @@ body {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 
-  .recompensas-cadastradas .editar{
+  .recompensas-cadastradas .excluir{
     margin-top: 100px;
     margin-left: 180px;
     background-color: #FFFF;
     border: none;
   }
 
-  .recompensas-cadastradas .editar img{
+  .recompensas-cadastradas .excluir img{
     width: 32px;
   }
 
