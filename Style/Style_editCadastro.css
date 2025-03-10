@@ -203,3 +203,29 @@ body {
     background: #006bb6;
   }
   
+  .recompensas-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .recompensas-cadastradas{
+    width: 250px;
+    height: 250px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .recompensas-cadastradas .editar{
+    margin-top: 100px;
+    margin-left: 180px;
+    background-color: #FFFF;
+    border: none;
+  }
+
+  .recompensas-cadastradas .editar img{
+    width: 32px;
+  }
+
+  
